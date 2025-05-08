@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html :class="{'dark': darkMode === 'dark' || (darkMode === 'system' &amp;&amp; window.matchMedia('(prefers-color-scheme: dark)').matches)}" class="scroll-smooth" data-content_root="../" lang="zh-tw" x-data="{ darkMode: localStorage.getItem('darkMode') || localStorage.setItem('darkMode', 'system'), activeSection: '' }" x-init="$watch('darkMode', val =&gt; localStorage.setItem('darkMode', val))">
+<head>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta charset="utf-8"/>
+<meta content="white" media="(prefers-color-scheme: light)" name="theme-color"/>
+<meta content="black" media="(prefers-color-scheme: dark)" name="theme-color"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>計數原理 | 上課的筆記</title>
+<meta content="計數原理 | 上課的筆記" property="og:title"/>
+<meta content="計數原理 | 上課的筆記" name="twitter:title"/>
+<link href="../_static/pygments.css?v=e72c8e07" rel="stylesheet" type="text/css"/>
+<link href="../_static/theme.css?v=42baaae4" rel="stylesheet" type="text/css"/>
+<link href="../_static/sphinx-design.min.css?v=95c83b7e" rel="stylesheet" type="text/css"/>
+<link href="../_static/awesome-sphinx-design.css?v=15e0fffa" rel="stylesheet" type="text/css"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="permutation.html" rel="next" title="排列"/>
+<link href="index.html" rel="prev" title="數學啊啊啊"/>
+<script>
+    <!-- Prevent Flash of wrong theme -->
+      const userPreference = localStorage.getItem('darkMode');
+      let mode;
+      if (userPreference === 'dark' || window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        mode = 'dark';
+        document.documentElement.classList.add('dark');
+      } else {
+        mode = 'light';
+      }
+      if (!userPreference) {localStorage.setItem('darkMode', mode)}
+    </script>
+</head>
+<body :class="{ 'overflow-hidden': showSidebar }" class="min-h-screen font-sans antialiased bg-background text-foreground" x-data="{ showSidebar: false, showScrollTop: false }">
+<div @click.self="showSidebar = false" class="fixed inset-0 z-50 overflow-hidden bg-background/80 backdrop-blur-sm md:hidden" x-cloak="" x-show="showSidebar"></div><div class="relative flex flex-col min-h-screen" id="page"><a class="absolute top-0 left-0 z-[100] block bg-background p-4 text-xl transition -translate-x-full opacity-0 focus:translate-x-0 focus:opacity-100" href="#content">
+      Skip to content
+    </a><header class="sticky top-0 z-40 w-full border-b shadow-sm border-border supports-backdrop-blur:bg-background/60 bg-background/95 backdrop-blur"><div class="container flex items-center h-14">
+<div class="hidden mr-4 md:flex">
+<a class="flex items-center mr-6" href="../index.html"><span class="hidden font-bold sm:inline-block text-clip whitespace-nowrap">上課的筆記</span>
+</a></div><button @click="showSidebar = true" class="inline-flex items-center justify-center h-10 px-0 py-2 mr-2 text-base font-medium transition-colors rounded-md hover:text-accent-foreground hover:bg-transparent md:hidden" type="button">
+<svg aria-hidden="true" fill="currentColor" height="24" viewbox="0 96 960 960" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M152.587 825.087q-19.152 0-32.326-13.174t-13.174-32.326q0-19.152 13.174-32.326t32.326-13.174h440q19.152 0 32.326 13.174t13.174 32.326q0 19.152-13.174 32.326t-32.326 13.174h-440Zm0-203.587q-19.152 0-32.326-13.174T107.087 576q0-19.152 13.174-32.326t32.326-13.174h320q19.152 0 32.326 13.174T518.087 576q0 19.152-13.174 32.326T472.587 621.5h-320Zm0-203.587q-19.152 0-32.326-13.174t-13.174-32.326q0-19.152 13.174-32.326t32.326-13.174h440q19.152 0 32.326 13.174t13.174 32.326q0 19.152-13.174 32.326t-32.326 13.174h-440ZM708.913 576l112.174 112.174q12.674 12.674 12.674 31.826t-12.674 31.826Q808.413 764.5 789.261 764.5t-31.826-12.674l-144-144Q600 594.391 600 576t13.435-31.826l144-144q12.674-12.674 31.826-12.674t31.826 12.674q12.674 12.674 12.674 31.826t-12.674 31.826L708.913 576Z"></path>
+</svg>
+<span class="sr-only">Toggle navigation menu</span>
+</button>
+<div class="flex items-center justify-between flex-1 space-x-2 sm:space-x-4 md:justify-end">
+<div class="flex-1 w-full md:w-auto md:flex-none"><form @keydown.k.window.meta="$refs.search.focus()" action="../search.html" class="relative flex items-center group" id="searchbox" method="get">
+<input aria-label="Search the docs" class="inline-flex items-center font-medium transition-colors bg-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background border border-input hover:bg-accent focus:bg-accent hover:text-accent-foreground focus:text-accent-foreground hover:placeholder-accent-foreground py-2 px-4 relative h-9 w-full justify-start rounded-[0.5rem] text-sm text-muted-foreground sm:pr-12 md:w-40 lg:w-64" id="search-input" name="q" placeholder="Search ..." type="search" x-ref="search"/>
+<kbd class="pointer-events-none absolute right-1.5 top-2 hidden h-5 select-none text-muted-foreground items-center gap-1 rounded border border-border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex group-hover:bg-accent group-hover:text-accent-foreground">
+<span class="text-xs">⌘</span>
+    K
+  </kbd>
+</form>
+</div>
+<nav class="flex items-center space-x-1">
+<button @click="darkMode = darkMode === 'light' ? 'dark' : 'light'" aria-label="Color theme switcher" class="relative inline-flex items-center justify-center px-0 text-sm font-medium transition-colors rounded-md hover:bg-accent hover:text-accent-foreground h-9 w-9" type="button">
+<svg class="absolute transition-all scale-100 rotate-0 dark:-rotate-90 dark:scale-0" fill="currentColor" height="24" viewbox="0 96 960 960" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M480 685q45.456 0 77.228-31.772Q589 621.456 589 576q0-45.456-31.772-77.228Q525.456 467 480 467q-45.456 0-77.228 31.772Q371 530.544 371 576q0 45.456 31.772 77.228Q434.544 685 480 685Zm0 91q-83 0-141.5-58.5T280 576q0-83 58.5-141.5T480 376q83 0 141.5 58.5T680 576q0 83-58.5 141.5T480 776ZM80 621.5q-19.152 0-32.326-13.174T34.5 576q0-19.152 13.174-32.326T80 530.5h80q19.152 0 32.326 13.174T205.5 576q0 19.152-13.174 32.326T160 621.5H80Zm720 0q-19.152 0-32.326-13.174T754.5 576q0-19.152 13.174-32.326T800 530.5h80q19.152 0 32.326 13.174T925.5 576q0 19.152-13.174 32.326T880 621.5h-80Zm-320-320q-19.152 0-32.326-13.174T434.5 256v-80q0-19.152 13.174-32.326T480 130.5q19.152 0 32.326 13.174T525.5 176v80q0 19.152-13.174 32.326T480 301.5Zm0 720q-19.152 0-32.326-13.17Q434.5 995.152 434.5 976v-80q0-19.152 13.174-32.326T480 850.5q19.152 0 32.326 13.174T525.5 896v80q0 19.152-13.174 32.33-13.174 13.17-32.326 13.17ZM222.174 382.065l-43-42Q165.5 327.391 166 308.239t13.174-33.065q13.435-13.674 32.587-13.674t32.065 13.674l42.239 43q12.674 13.435 12.555 31.706-.12 18.272-12.555 31.946-12.674 13.674-31.445 13.413-18.772-.261-32.446-13.174Zm494 494.761-42.239-43q-12.674-13.435-12.674-32.087t12.674-31.565Q686.609 756.5 705.38 757q18.772.5 32.446 13.174l43 41.761Q794.5 824.609 794 843.761t-13.174 33.065Q767.391 890.5 748.239 890.5t-32.065-13.674Zm-42-494.761Q660.5 369.391 661 350.62q.5-18.772 13.174-32.446l41.761-43Q728.609 261.5 747.761 262t33.065 13.174q13.674 13.435 13.674 32.587t-13.674 32.065l-43 42.239q-13.435 12.674-31.706 12.555-18.272-.12-31.946-12.555Zm-495 494.761Q165.5 863.391 165.5 844.239t13.674-32.065l43-42.239q13.435-12.674 32.087-12.674t31.565 12.674Q299.5 782.609 299 801.38q-.5 18.772-13.174 32.446l-41.761 43Q231.391 890.5 212.239 890t-33.065-13.174ZM480 576Z"></path>
+</svg>
+<svg class="absolute transition-all scale-0 rotate-90 dark:rotate-0 dark:scale-100" fill="currentColor" height="24" viewbox="0 96 960 960" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M480 936q-151 0-255.5-104.5T120 576q0-138 90-239.5T440 218q25-3 39 18t-1 44q-17 26-25.5 55t-8.5 61q0 90 63 153t153 63q31 0 61.5-9t54.5-25q21-14 43-1.5t19 39.5q-14 138-117.5 229T480 936Zm0-80q88 0 158-48.5T740 681q-20 5-40 8t-40 3q-123 0-209.5-86.5T364 396q0-20 3-40t8-40q-78 32-126.5 102T200 576q0 116 82 198t198 82Zm-10-270Z"></path>
+</svg>
+</button>
+</nav>
+</div>
+</div>
+</header>
+<div class="flex-1"><div class="container flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10"><aside :aria-hidden="!showSidebar" :class="{ 'translate-x-0': showSidebar }" class="fixed inset-y-0 left-0 md:top-14 z-50 md:z-30 bg-background md:bg-transparent transition-all duration-100 -translate-x-full md:translate-x-0 ml-0 p-6 md:p-0 md:-ml-2 md:h-[calc(100vh-3.5rem)] w-5/6 md:w-full shrink-0 overflow-y-auto border-r border-border md:sticky" id="left-sidebar">
+<a class="!justify-start text-sm md:!hidden bg-background" href="../index.html"><span class="font-bold text-clip whitespace-nowrap">上課的筆記</span>
+</a>
+<div class="relative overflow-hidden md:overflow-auto my-4 md:my-0 h-[calc(100vh-8rem)] md:h-auto">
+<div class="overflow-y-auto h-full w-full relative pr-6"><nav class="table w-full min-w-full my-6 lg:my-8">
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="index.html">數學啊啊啊<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul class="current" x-show="expanded">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">計數原理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="permutation.html">排列</a></li>
+<li class="toctree-l2"><a class="reference internal" href="combine.html">組合</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<button @click="showSidebar = false" class="absolute md:hidden right-4 top-4 rounded-sm opacity-70 transition-opacity hover:opacity-100" type="button">
+<svg class="h-4 w-4" fill="currentColor" height="24" stroke="none" viewbox="0 96 960 960" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M480 632 284 828q-11 11-28 11t-28-11q-11-11-11-28t11-28l196-196-196-196q-11-11-11-28t11-28q11-11 28-11t28 11l196 196 196-196q11-11 28-11t28 11q11 11 11 28t-11 28L536 576l196 196q11 11 11 28t-11 28q-11 11-28 11t-28-11L480 632Z"></path>
+</svg>
+</button>
+</aside>
+<main class="relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]">
+<div class="w-full min-w-0 mx-auto">
+<nav aria-label="breadcrumbs" class="flex items-center mb-4 space-x-1 text-sm text-muted-foreground">
+<a class="overflow-hidden text-ellipsis whitespace-nowrap hover:text-foreground" href="../index.html">
+<span class="hidden md:inline">上課的筆記</span>
+<svg aria-label="Home" class="md:hidden" fill="currentColor" height="18" stroke="none" viewbox="0 96 960 960" width="18" xmlns="http://www.w3.org/2000/svg">
+<path d="M240 856h120V616h240v240h120V496L480 316 240 496v360Zm-80 80V456l320-240 320 240v480H520V696h-80v240H160Zm320-350Z"></path>
+</svg>
+</a>
+<div class="mr-1">/</div><a class="hover:text-foreground overflow-hidden text-ellipsis whitespace-nowrap" href="index.html">數學啊啊啊</a>
+<div class="mr-1">/</div><span aria-current="page" class="font-medium text-foreground overflow-hidden text-ellipsis whitespace-nowrap">計數原理</span>
+</nav>
+<div id="content" role="main">
+<section id="id1">
+<h1>計數原理<a class="headerlink" href="#id1" title="Link to this heading"><span>#</span></a></h1>
+<section id="id2">
+<h2>命題<a class="headerlink" href="#id2" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id2'"><span>#</span></a></h2>
+<p>一個能判斷正確是否為真的問題或敘述就叫做 <strong>命題</strong>，例如三角形內角和為180º是真的命題，1+1=3是錯誤的命題等等</p>
+<p>還有一個問題的反面稱為否定命題，例如三角形的內角和不是180ª之類的，假設一命題為 <cite>P</cite>，則他的否定命題可記為 <span class="math notranslate nohighlight">\(\neg\)</span> P 或是 ~P</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>當P,Q都是對的時候，P且Q為真(P <span class="math notranslate nohighlight">\(\wedge\)</span> Q)</p>
+<p>如果P,Q其中一個是對或兩個都對的時候,P或Q為真 (P <span class="math notranslate nohighlight">\(\vee\)</span> Q) eg.</p>
+<p><span class="math notranslate nohighlight">\((3 &gt; 3) \wedge (3 = 3)\)</span> 為假</p>
+<p><span class="math notranslate nohighlight">\((3 &gt; 3) \vee (3 = 3)\)</span> 為真</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>早上起床去刷牙，這件事情中，早上起床是刷牙的充分條件，刷牙是早上起床的必要條件，也就是說</p>
+<p>假設P是Q的充分條件，則</p>
+<p>假設</p>
+<p>Q發生的時候P一定會發生，但是P發生時Q不一定會發生</p>
+<p>假設</p>
+<p>P跟Q互為充分與必要條件時，PQ互為充要條件</p>
+</div>
+</section>
+<section id="id3">
+<h2>集合<a class="headerlink" href="#id3" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id3'"><span>#</span></a></h2>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>定義集合</p>
+<p><span class="math notranslate nohighlight">\(A = \{1,2,3,4,5\}\)</span></p>
+<p><span class="math notranslate nohighlight">\(B=\{3,4,5,6\}\)</span></p>
+</div>
+<p>一個集合可以表示為 <span class="math notranslate nohighlight">\(S=\{1,2,3,4\}\)</span> 或是 <span class="math notranslate nohighlight">\(S=\{x| 1 \leq x \leq 4\}\)</span></p>
+<p>其中，1,2,3,4是集合中的元素。元素不限種類，集合也可以是另一個集合的元素，例如 <span class="math notranslate nohighlight">\(N = \{ \{1,2,3\}, 4, 5\}\)</span>，在集合N中有3個元素，{1,2,3}跟4,5。</p>
+<p>今天有一個元素3他在集合S裡面，則我們可以寫作 <span class="math notranslate nohighlight">\(3 \in S\)</span></p>
+<p>另一個元素10不在集合S裡面，我們寫作 <span class="math notranslate nohighlight">\(10 \not\in S\)</span></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>我們用n(S)用來表示集合的元素個數,例如 n(A)=3</p>
+</div>
+<section id="id4">
+<h3>交集<a class="headerlink" href="#id4" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id4'"><span>#</span></a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A:你覺得義大利麵要配什麼醬料才好
+B:我覺得義大利麵應該就要配42號混凝土</p>
+<p>Q:試求A跟B講的話的相關程度</p>
+</div>
+<p>交集指的是兩個集合相同的地方，則集合A與B的交集可以表示為 <span class="math notranslate nohighlight">\(A \cap B = \{3,4,5\}\)</span></p>
+<a class="reference internal image-reference" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnDNvDIOlgxNE9tKbShAX9sr0OxQNyi_rGPA&amp;s"><img alt="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnDNvDIOlgxNE9tKbShAX9sr0OxQNyi_rGPA&amp;s" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnDNvDIOlgxNE9tKbShAX9sr0OxQNyi_rGPA&amp;s" style="width: 60%;"/>
+</a>
+</section>
+<section id="id5">
+<h3>聯集<a class="headerlink" href="#id5" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id5'"><span>#</span></a></h3>
+<p>聯集是指兩個集合佔的所有部分，可以寫為 <span class="math notranslate nohighlight">\(A \cup B = \{1,2,3,4,5,6\}\)</span></p>
+<a class="reference internal image-reference" href="https://colinchiu87.github.io/posts/DataStructure-set/set_union.png"><img alt="https://colinchiu87.github.io/posts/DataStructure-set/set_union.png" src="https://colinchiu87.github.io/posts/DataStructure-set/set_union.png" style="width: 60%;"/>
+</a>
+</section>
+<section id="id6">
+<h3>差集<a class="headerlink" href="#id6" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id6'"><span>#</span></a></h3>
+<p>差集是兩個集合做運算，可以表示為 <span class="math notranslate nohighlight">\(A - B = \{1,2,3\}\)</span></p>
+<img alt="../_images/diff.png" src="../_images/diff.png"/>
+</section>
+<section id="id7">
+<h3>子集合<a class="headerlink" href="#id7" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id7'"><span>#</span></a></h3>
+<p>當一個集合被包含在另外一個集合裡面時，我們稱被包住的那個集合為 <strong>子集合</strong> ，就像是現在這個子集合是集合的子集合(?)</p>
+<p>今天有一個集合 <span class="math notranslate nohighlight">\(S=\{1,2,3\}\)</span> 他被包含在A裡面，這時候我們就可以寫成 <span class="math notranslate nohighlight">\(S \subseteq A\)</span> 或是 <span class="math notranslate nohighlight">\(S \subset A\)</span> (最下面那一槓是等於的意思，就是有可能等於A)</p>
+<p>我們可以用文氏圖來圖像化的表示集合間的關係，例如今天有一群集合</p>
+<div class="math notranslate nohighlight">
+\[\mathbb{N} \subseteq \mathbb{Z} \subseteq \mathbb{Q} \subseteq \mathbb{R}\]</div>
+<p>可以畫成</p>
+<a class="reference internal image-reference" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmXOXatNZUZjsfdnYR_LJ1iXL3-ViSGW5sCQ&amp;s"><img alt="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmXOXatNZUZjsfdnYR_LJ1iXL3-ViSGW5sCQ&amp;s" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmXOXatNZUZjsfdnYR_LJ1iXL3-ViSGW5sCQ&amp;s" style="width: 60%;"/>
+</a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>如果有一個集合是空的可以表示為 <span class="math notranslate nohighlight">\(\varnothing\)</span> (空集合)(這個之後會用到)</p>
+</div>
+</section>
+<section id="id8">
+<h3>宇集<a class="headerlink" href="#id8" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id8'"><span>#</span></a></h3>
+<p>宇集是一個集合的範圍，常用符號為U，假設今天一個集合N在宇集U裡面，則 <span class="math notranslate nohighlight">\(\nexists \  a, a \in N \wedge a \not \in U\)</span></p>
+<p>舉個實際一點的例子，假設今天有一個集合屬於 <span class="math notranslate nohighlight">\(\mathbb{N}\)</span> ，那他就不可能有一個元素叫做2.5</p>
+<p>再舉個例子，假設今天有一個集合叫做火鍋，那裡面一定不會有芋頭的元素(非常棒對吧)(?)</p>
+</section>
+<section id="id9">
+<h3>補集<a class="headerlink" href="#id9" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id9'"><span>#</span></a></h3>
+<p>補集是一個集合裡面，除了集合本身以外在宇集範圍裡面的所有東西，舉個例子</p>
+<p>今天集合A在宇集 <span class="math notranslate nohighlight">\(\{1,2,3,4,5,6,7,8,9,10\}\)</span> 的補集就是 <span class="math notranslate nohighlight">\(A' = \{6,7,8,9,10\}\)</span></p>
+<p>再舉個例子，今天集合白飯在壽司的宇集裡面的補集就是生魚片,哇沙米跟醬油 (這人是不是餓了)</p>
+</section>
+</section>
+<section id="id10">
+<h2>計數原理<a class="headerlink" href="#id10" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id10'"><span>#</span></a></h2>
+<p>講白話文就是數數的方法</p>
+<section id="id11">
+<h3>窮舉法與樹狀圖<a class="headerlink" href="#id11" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id11'"><span>#</span></a></h3>
+<p>窮舉法是在看到題目之後腦袋一片空白的補救方法(也是最原始的方法)，就是把它可能的情況一個一個列出來</p>
+<p>舉個例子，今天你在麥當勞點餐的時候，除了點主餐以外，還可以選套餐，這時候的你在想說我有幾種的選擇方式，在不知道有其他方法的時候就直接列出來</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span><code><span id="line-1">大麥克
+</span><span id="line-2">├── 薯條
+</span><span id="line-3">│   ├── 可樂
+</span><span id="line-4">│   ├── 雪碧
+</span><span id="line-5">│   └── 紅茶
+</span><span id="line-6">├── 沙拉
+</span><span id="line-7">│   ├── 可樂
+</span><span id="line-8">│   ├── 雪碧
+</span><span id="line-9">│   └── 紅茶
+</span><span id="line-10">├── 雞腿
+</span><span id="line-11">│   ├── 可樂
+</span><span id="line-12">│   ├── 雪碧
+</span><span id="line-13">│   └── 紅茶
+</span><span id="line-14">├── 雞塊
+</span><span id="line-15">│   ├── 可樂
+</span><span id="line-16">│   ├── 雪碧
+</span><span id="line-17">│   └── 紅茶
+</span><span id="line-18">└── 冰炫風
+</span><span id="line-19">    ├── 可樂
+</span><span id="line-20">    ├── 雪碧
+</span><span id="line-21">    └── 紅茶
+</span><span id="line-22">麥香雞
+</span><span id="line-23">├── 薯條
+</span><span id="line-24">│   ├── 可樂
+</span><span id="line-25">│   ├── 雪碧
+</span><span id="line-26">│   └── 紅茶
+</span><span id="line-27">├── 沙拉
+</span><span id="line-28">│   ├── 可樂
+</span><span id="line-29">│   ├── 雪碧
+</span><span id="line-30">│   └── 紅茶
+</span><span id="line-31">├── 雞腿
+</span><span id="line-32">│   ├── 可樂
+</span><span id="line-33">│   ├── 雪碧
+</span><span id="line-34">│   └── 紅茶
+</span><span id="line-35">├── 雞塊
+</span><span id="line-36">│   ├── 可樂
+</span><span id="line-37">│   ├── 雪碧
+</span><span id="line-38">│   └── 紅茶
+</span><span id="line-39">└── 冰炫風
+</span><span id="line-40">    ├── 可樂
+</span><span id="line-41">    ├── 雪碧
+</span><span id="line-42">    └── 紅茶
+</span></code></pre></div>
+</div>
+<p>這時候你就可以知道他有24種，同時選擇困難症發作的你，又站在自動點餐機前20分鐘(?)</p>
+<p>這個方法非常簡單暴力，對吧</p>
+</section>
+<section id="id12">
+<h3>加法與乘法原理<a class="headerlink" href="#id12" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id12'"><span>#</span></a></h3>
+<p>隔天，你又去了麥當勞覓食；這次學乖了，試圖用數學方法加速計算的過程，於是看了看菜單，每種漢堡有5種套餐，總共有3種漢堡，這時候你有5+5+5=15個套餐可以選擇</p>
+<p>好不容易算出套餐數的你，動動腦再想想那我有幾種搭配的組合，每個套餐有3種選項，總共有五種套餐，經過精密的計算，每種漢堡有3*5=15個選擇，在3個漢堡有15*3=45個選擇(好多喔)</p>
+<p>這樣做是不是快多了呢？（一定是大拇指的啦</p>
+</section>
+<section id="id13">
+<h3>取捨原理<a class="headerlink" href="#id13" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id13'"><span>#</span></a></h3>
+<p>在取餐過後，找個位置坐下，放眼望去有20個人吃麥香雞，15個人吃大麥克，還有5個人兩個都吃(是有多餓)，那在場有幾個人呢(為什麼不直接數人頭就好了)</p>
+<p>(試圖無視)我們可以用取捨原理來計算，他的公式是</p>
+<div class="math notranslate nohighlight">
+\[n(A \cup B) = [n(A) + n(B)] - n(A \cap B)\]</div>
+<p>我們定義集合A是吃麥香雞的人，B是吃大麥克的人，那可以套用成</p>
+<div class="math notranslate nohighlight">
+\[n(A \cup B) = [20 + 15] - 5 = 30\]</div>
+<p>所以在這間麥當勞有30個人在吃漢堡</p>
+<hr class="docutils"/>
+<p>隔天，你又去吃麥當勞(請注意身體健康)，發現不一樣的事情，有10個人吃麥香雞，15個人吃豬肉鬆餅堡，5個人吃薯條加冰淇淋，同時</p>
+<p>有5個人吃兩種</p>
+<p>有2個人吃三種</p>
+<p>那這邊總共有多少人呢?(你是Dora嗎)</p>
+<p>我們一樣可以用取捨原理計算</p>
+<p>定義吃麥香雞為A,豬肉鬆餅堡為B,薯條加冰淇淋為C</p>
+<div class="math notranslate nohighlight">
+\[n(A \cup B \cup C) = [n(A) + n(B) + n(C)] - [n(A \cap B) + n(B \cap C) + n(A \cap C)] - [n(A \cap B \cap C)]\]</div>
+<p>帶入情境可以得出</p>
+<div class="math notranslate nohighlight">
+\[n(A \cup B \cup C) = [10+15+5] - [5 + 2] + 2 = 25\]</div>
+<p>總共有25個人在吃麥當勞。</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>這種東西在計算的時候可以簡單理解為 單個相加 兩個一起 三個一起 四個一起…n個一起</p>
+<p>然後中間加減號穿插</p>
+<p>就是這麼簡單</p>
+</div>
+</section>
+</section>
+<section id="id14">
+<h2>小練習<a class="headerlink" href="#id14" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id14'"><span>#</span></a></h2>
+<p>(取捨原理周考)</p>
+</section>
+</section>
+</div></div><aside class="hidden text-sm xl:block" id="right-sidebar">
+<div class="sticky top-16 -mt-10 max-h-[calc(100vh-5rem)] overflow-y-auto pt-6 space-y-2"><p class="font-medium">On this page</p>
+<ul>
+<li><a :data-current="activeSection === '#id2'" class="reference internal" href="#id2">命題</a></li>
+<li><a :data-current="activeSection === '#id3'" class="reference internal" href="#id3">集合</a><ul>
+<li><a :data-current="activeSection === '#id4'" class="reference internal" href="#id4">交集</a></li>
+<li><a :data-current="activeSection === '#id5'" class="reference internal" href="#id5">聯集</a></li>
+<li><a :data-current="activeSection === '#id6'" class="reference internal" href="#id6">差集</a></li>
+<li><a :data-current="activeSection === '#id7'" class="reference internal" href="#id7">子集合</a></li>
+<li><a :data-current="activeSection === '#id8'" class="reference internal" href="#id8">宇集</a></li>
+<li><a :data-current="activeSection === '#id9'" class="reference internal" href="#id9">補集</a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#id10'" class="reference internal" href="#id10">計數原理</a><ul>
+<li><a :data-current="activeSection === '#id11'" class="reference internal" href="#id11">窮舉法與樹狀圖</a></li>
+<li><a :data-current="activeSection === '#id12'" class="reference internal" href="#id12">加法與乘法原理</a></li>
+<li><a :data-current="activeSection === '#id13'" class="reference internal" href="#id13">取捨原理</a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#id14'" class="reference internal" href="#id14">小練習</a></li>
+</ul>
+</div>
+</aside>
+</main>
+</div>
+</div><footer class="py-6 border-t border-border md:py-0">
+<div class="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
+<div class="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
+<p class="text-sm leading-loose text-center text-muted-foreground md:text-left">© 2025, Justmore5mins Built with <a class="font-medium underline underline-offset-4" href="https://www.sphinx-doc.org" rel="noreferrer">Sphinx 8.2.3</a></p>
+</div>
+</div>
+</footer>
+</div>
+<script src="../_static/documentation_options.js?v=db21b273"></script>
+<script src="../_static/doctools.js?v=9bcbadda"></script>
+<script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+<script defer="defer" src="../_static/theme.js?v=073f68d9"></script>
+<script src="../_static/design-tabs.js?v=f930bc37"></script>
+<script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</body>
+</html>
