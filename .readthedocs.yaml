@@ -11,7 +11,7 @@ build:
       python: "3.8"
     commands: 
       - mkdir --parents _readthedocs/html/
-      - cp --recursive pre_built_html/* _readthedocs/html/
+      - cp --recursive build/html/* _readthedocs/html/
 
 # Build documentation in the "docs/" directory with Sphinx
 sphinx:
