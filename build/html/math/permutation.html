@@ -72,7 +72,7 @@
 <div class="overflow-y-auto h-full w-full relative pr-6"><nav class="table w-full min-w-full my-6 lg:my-8">
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="index.html">無聊的數學<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul class="current" x-show="expanded">
+<li class="toctree-l1 current" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="index.html">數學啊啊啊<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul class="current" x-show="expanded">
 <li class="toctree-l2"><a class="reference internal" href="counting.html">計數原理</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">排列</a></li>
 <li class="toctree-l2"><a class="reference internal" href="combine.html">組合</a></li>
@@ -97,14 +97,110 @@
 <path d="M240 856h120V616h240v240h120V496L480 316 240 496v360Zm-80 80V456l320-240 320 240v480H520V696h-80v240H160Zm320-350Z"></path>
 </svg>
 </a>
-<div class="mr-1">/</div><a class="hover:text-foreground overflow-hidden text-ellipsis whitespace-nowrap" href="index.html">無聊的數學</a>
+<div class="mr-1">/</div><a class="hover:text-foreground overflow-hidden text-ellipsis whitespace-nowrap" href="index.html">數學啊啊啊</a>
 <div class="mr-1">/</div><span aria-current="page" class="font-medium text-foreground overflow-hidden text-ellipsis whitespace-nowrap">排列</span>
 </nav>
 <div id="content" role="main">
 <section id="id1">
 <h1>排列<a class="headerlink" href="#id1" title="Link to this heading"><span>#</span></a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>黑板上排列組合，你捨得解開嗎？🎤</p>
+<p>我：就算我想解但是我也解不開啊啊啊</p>
+</div>
+<section id="id2">
+<h2>直線排列<a class="headerlink" href="#id2" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id2'"><span>#</span></a></h2>
+<p>今天有三個人排隊要點麥當勞，請問他們有幾種站法？</p>
+<p>我們先叫那三個人ABC，那他們在站的時候：</p>
+<p>第一個人有三個選擇(123)，第二個有兩個，第三個只有一個</p>
+<p>然後再用乘的把它乘起來(忘記的話請看 <a class="reference external" href="counting.html#id12">這裡</a> )</p>
+<p>也就是說他有 <span class="math notranslate nohighlight">\(3\times 2\times 1 = 6\)</span> 種站法</p>
+<hr class="docutils"/>
+<p>有一天你請朋友幫你買麥當勞的時候，他說在場有n個人，他問你說這群人有幾種排法
+這時候我們可以理解為</p>
+<p>第一個人有n個位置可以站,第二個n-1,第三個n-2…以此類推，然後再把它乘起來，這時，我們可以寫成</p>
+<div class="math notranslate nohighlight">
+\[\prod_{i=1}^{n} i\]</div>
+<p>或者是 <span class="math notranslate nohighlight">\(n!\)</span> ⬅看起來清爽多了</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>當你要表示1*2*3*4…*n可以寫成n!</p>
+</div>
 </section>
-</div></div>
+<section id="id4">
+<h2>排列的神奇公式<a class="headerlink" href="#id4" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id4'"><span>#</span></a></h2>
+<p>在你回答你的朋友在n個人有幾種排法之後，他又很機O的問說，那五個人抓三個有幾種排法呢？</p>
+<p>這時候可以想成有三個空格要選人，長得像是這樣</p>
+<p>「 」「 」「 」</p>
+<p>第一個框框在選人的時候有五個人可以選，所以第一個框框寫5，第二個框框剩4個，第三個框框剩三個，所以總共的排法有 <span class="math notranslate nohighlight">\(5\times 4\times 3 = 60\)</span> 種排法</p>
+<p>他又問說，那n取m個人呢？</p>
+<p>也就是說，我們現在有m個框框要從n個人裡面挑把他塞進去，也就是說可以寫成 <span class="math notranslate nohighlight">\(m(m-1)(m-2)...(m-n)\)</span> ，用數學的方式紀錄就是</p>
+<div class="math notranslate nohighlight">
+\[P_{m}^{n} = \frac{n!}{(n-m)!}\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>這個東東也可以理解成從m開始往下乘n個數字，然後我們定義 <span class="math notranslate nohighlight">\(P_{0}^{n} = 1\)</span></p>
+</div>
+</section>
+<section id="id5">
+<h2>有相同物的排列<a class="headerlink" href="#id5" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id5'"><span>#</span></a></h2>
+<a class="reference internal image-reference" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTB9ShefwmnHvSe2-cIQEvqLHDUWs7IbSMgxQ&amp;s"><img alt="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTB9ShefwmnHvSe2-cIQEvqLHDUWs7IbSMgxQ&amp;s" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTB9ShefwmnHvSe2-cIQEvqLHDUWs7IbSMgxQ&amp;s" style="width: 60%;"/>
+</a>
+<p>請問上圖7個蜘蛛人分成</p>
+<p>3 1 3</p>
+<p>3 3 1</p>
+<p>2 3 2</p>
+<p>時，分別有幾種排法</p>
+<hr class="docutils"/>
+<p>我們先順時針把它編號abcdefg，這時他們的排法可能有這些</p>
+<p>我們可以用這種方式把它算出來</p>
+<div class="math notranslate nohighlight">
+\[\frac{7!}{3!1!3!} = 140\]</div>
+<p>總共有140種。</p>
+<p>我們把它公式化之後變成</p>
+<div class="math notranslate nohighlight">
+\[\frac{n!}{a_1! a_2! a_3!}\]</div>
+<p>其中</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span><code><span id="line-1">n = 總共的目標數
+</span><span id="line-2">an = 第n組的人數
+</span></code></pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>因為1!=1所以通常會省略掉</p>
+</div>
+</section>
+<section id="id6">
+<h2>重複排列<a class="headerlink" href="#id6" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id6'"><span>#</span></a></h2>
+<p>今天你拿到了一個4位數密碼的行李箱，請問他總共有多少種可能的密碼？</p>
+<p>密碼總共有數字0~9總共10種，然後有4個洞要填</p>
+<p>「 」「 」「 」「 」</p>
+<p>第一個洞有10個選擇，第二個洞也有10種…以此類推，所以可以簡化成 <span class="math notranslate nohighlight">\(10\times 10\times 10\times 10 = 10^4 = 10000\)</span> 種 密碼</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>假設今天有m位密碼，每位密碼有n個選擇，可以寫成 <span class="math notranslate nohighlight">\(n^m\)</span> 種</p>
+</div>
+</section>
+<section id="id7">
+<h2>東西選人跟人選東西<a class="headerlink" href="#id7" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id7'"><span>#</span></a></h2>
+<p>這關係到次方的關係，假設今天有五個人要住三間房，在任意分的情況下有 :math:<a href="#id8"><span class="problematic" id="id9">`</span></a>3^5=243`種選擇。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>算這種東西的時候可以想成是 <span class="math notranslate nohighlight">\(被選的^{選的}\)</span></p>
+</div>
+</section>
+</section>
+</div></div><aside class="hidden text-sm xl:block" id="right-sidebar">
+<div class="sticky top-16 -mt-10 max-h-[calc(100vh-5rem)] overflow-y-auto pt-6 space-y-2"><p class="font-medium">On this page</p>
+<ul>
+<li><a :data-current="activeSection === '#id2'" class="reference internal" href="#id2">直線排列</a></li>
+<li><a :data-current="activeSection === '#id4'" class="reference internal" href="#id4">排列的神奇公式</a></li>
+<li><a :data-current="activeSection === '#id5'" class="reference internal" href="#id5">有相同物的排列</a></li>
+<li><a :data-current="activeSection === '#id6'" class="reference internal" href="#id6">重複排列</a></li>
+<li><a :data-current="activeSection === '#id7'" class="reference internal" href="#id7">東西選人跟人選東西</a></li>
+</ul>
+</div>
+</aside>
 </main>
 </div>
 </div><footer class="py-6 border-t border-border md:py-0">
@@ -120,5 +216,6 @@
 <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
 <script defer="defer" src="../_static/theme.js?v=073f68d9"></script>
 <script src="../_static/design-tabs.js?v=f930bc37"></script>
+<script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </body>
 </html>
