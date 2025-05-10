@@ -84,20 +84,19 @@
 然後當你越列越多次方之後，然後剛剛好把它寫成三角形就變成這樣
 
 .. image:: https://www.ntsec.edu.tw/UserFiles/image/61-6_12_fig1.gif
+    :align: center
     :width: 80%
 
 還有這樣
 
 .. image:: https://blog.jayinnn.dev/image/Pascaltrianglewithc.png
+    :align: center
 
-.. image:: https://cultivatememe.moe/img/article/illuminati.jpeg
-    :width: 60%
-
-是不是有87%像
-
-這個東東也有個好用的方式
+你有沒有發現它上面兩個加起來會等於他下面那一個(如同紅色三角形那樣)(不信可以自己算算看)，他的公式長這樣
 
 .. math::
-    \sum_{i=0}^{n} C^{n}_{i} = 2^n
+    C^{n-1}_{k-1} + C^{n-1}_{k} = C^n_k
 
-我們可以用二項式定理證明，我們先將它變成 :math:`(x+y)^n` ，再將 :math:`x=y=1` ，得出 :math:`2^n`
+或是可以理解為上面一樣，下面差一留大的。
+
+還有當你用橫排看的時候，他其實就是 :math:`(x+y)^n` 的係數，所以當我們 x=y=1 的時候，:math:`\sum_{i=0}^{n} C^{n}_{i} = 2^n` ，是不是非常美妙

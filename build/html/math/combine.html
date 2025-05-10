@@ -77,6 +77,7 @@
 <li class="toctree-l2"><a class="reference internal" href="permutation.html">排列</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">組合</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chance.html">古典機率</a></li>
+<li class="toctree-l2"><a class="reference internal" href="questions.html">那些課本不會告訴你的事</a></li>
 </ul>
 </li>
 </ul>
@@ -162,17 +163,15 @@
 <div class="math notranslate nohighlight">
 \[(x+y)^3 = C^{3}_{0} x^3 + C^{3}_{1} x^2y + C^{3}_{2} xy^2 + C^{3}_{3} y^3\]</div>
 <p>然後當你越列越多次方之後，然後剛剛好把它寫成三角形就變成這樣</p>
-<a class="reference internal image-reference" href="https://www.ntsec.edu.tw/UserFiles/image/61-6_12_fig1.gif"><img alt="https://www.ntsec.edu.tw/UserFiles/image/61-6_12_fig1.gif" src="https://www.ntsec.edu.tw/UserFiles/image/61-6_12_fig1.gif" style="width: 80%;"/>
+<a class="reference internal image-reference" href="https://www.ntsec.edu.tw/UserFiles/image/61-6_12_fig1.gif"><img alt="https://www.ntsec.edu.tw/UserFiles/image/61-6_12_fig1.gif" class="align-center" src="https://www.ntsec.edu.tw/UserFiles/image/61-6_12_fig1.gif" style="width: 80%;"/>
 </a>
 <p>還有這樣</p>
-<img alt="https://blog.jayinnn.dev/image/Pascaltrianglewithc.png" src="https://blog.jayinnn.dev/image/Pascaltrianglewithc.png"/>
-<a class="reference internal image-reference" href="https://cultivatememe.moe/img/article/illuminati.jpeg"><img alt="https://cultivatememe.moe/img/article/illuminati.jpeg" src="https://cultivatememe.moe/img/article/illuminati.jpeg" style="width: 60%;"/>
-</a>
-<p>是不是有87%像</p>
-<p>這個東東也有個好用的方式</p>
+<img alt="https://blog.jayinnn.dev/image/Pascaltrianglewithc.png" class="align-center" src="https://blog.jayinnn.dev/image/Pascaltrianglewithc.png"/>
+<p>你有沒有發現它上面兩個加起來會等於他下面那一個(如同紅色三角形那樣)(不信可以自己算算看)，他的公式長這樣</p>
 <div class="math notranslate nohighlight">
-\[\sum_{i=0}^{n} C^{n}_{i} = 2^n\]</div>
-<p>我們可以用二項式定理證明，我們先將它變成 <span class="math notranslate nohighlight">\((x+y)^n\)</span> ，再將 <span class="math notranslate nohighlight">\(x=y=1\)</span> ，得出 <span class="math notranslate nohighlight">\(2^n\)</span></p>
+\[C^{n-1}_{k-1} + C^{n-1}_{k} = C^n_k\]</div>
+<p>或是可以理解為上面一樣，下面差一留大的。</p>
+<p>還有當你用橫排看的時候，他其實就是 <span class="math notranslate nohighlight">\((x+y)^n\)</span> 的係數，所以當我們 x=y=1 的時候，<span class="math notranslate nohighlight">\(\sum_{i=0}^{n} C^{n}_{i} = 2^n\)</span> ，是不是非常美妙</p>
 </section>
 </section>
 </div></div><aside class="hidden text-sm xl:block" id="right-sidebar">

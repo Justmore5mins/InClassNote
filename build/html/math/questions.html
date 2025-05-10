@@ -16,7 +16,6 @@
 <link href="../_static/awesome-sphinx-design.css?v=15e0fffa" rel="stylesheet" type="text/css"/>
 <link href="../search.html" rel="search" title="Search"/>
 <link href="../genindex.html" rel="index" title="Index"/>
-<link href="chance.html" rel="prev" title="古典機率"/>
 <script>
     <!-- Prevent Flash of wrong theme -->
       const userPreference = localStorage.getItem('darkMode');
@@ -70,13 +69,12 @@
 <div class="relative overflow-hidden md:overflow-auto my-4 md:my-0 h-[calc(100vh-8rem)] md:h-auto">
 <div class="overflow-y-auto h-full w-full relative pr-6"><nav class="table w-full min-w-full my-6 lg:my-8">
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul class="current">
-<li class="toctree-l1 current" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="index.html">數學啊啊啊<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul class="current" x-show="expanded">
+<ul>
+<li class="toctree-l1" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="index.html">數學啊啊啊<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
 <li class="toctree-l2"><a class="reference internal" href="counting.html">計數原理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="permutation.html">排列</a></li>
 <li class="toctree-l2"><a class="reference internal" href="combine.html">組合</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chance.html">古典機率</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">那些課本不會告訴你的事</a></li>
 </ul>
 </li>
 </ul>
@@ -98,12 +96,13 @@
 <path d="M240 856h120V616h240v240h120V496L480 316 240 496v360Zm-80 80V456l320-240 320 240v480H520V696h-80v240H160Zm320-350Z"></path>
 </svg>
 </a>
-<div class="mr-1">/</div><a class="hover:text-foreground overflow-hidden text-ellipsis whitespace-nowrap" href="index.html">數學啊啊啊</a>
 <div class="mr-1">/</div><span aria-current="page" class="font-medium text-foreground overflow-hidden text-ellipsis whitespace-nowrap">那些課本不會告訴你的事</span>
 </nav>
 <div id="content" role="main">
 <section id="id1">
 <h1>那些課本不會告訴你的事<a class="headerlink" href="#id1" title="Link to this heading"><span>#</span></a></h1>
+<section id="id2">
+<h2>交集問題<a class="headerlink" href="#id2" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id2'"><span>#</span></a></h2>
 <div class="math notranslate nohighlight">
 \[\begin{split}A = \{\frac{t}{2}\mid t \in \mathbb{N},1 \leq t \leq 50\}\\
 B = \{\frac{k}{3} \mid k \in \mathbb{N}, 1 \leq k \leq 50\}\end{split}\]</div>
@@ -117,7 +116,6 @@ B = \{\frac{k}{3} \mid k \in \mathbb{N}, 1 \leq k \leq 50\}\end{split}\]</div>
 <p>所以 <span class="math notranslate nohighlight">\(n(A \cap B) = 16\)</span> ， 在套用公式進行精密的計算過後</p>
 <div class="math notranslate nohighlight">
 \[n(A \cup B) = n(A) + n(B) - n(A \cap B) = 50+50-16 = 84\]</div>
-<p>fin.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>他這16個分別是</p>
@@ -127,8 +125,63 @@ B = \{\frac{k}{3} \mid k \in \mathbb{N}, 1 \leq k \leq 50\}\end{split}\]</div>
 </span></code></pre></div>
 </div>
 </div>
+<p>fin.</p>
 </section>
-</div></div>
+<section id="c-8-4">
+<h2><span class="math notranslate nohighlight">\(C^8_4\)</span> 之謎<a class="headerlink" href="#c-8-4" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#c-8-4'"><span>#</span></a></h2>
+<p>請問下列哪些敘述的方法數與 <span class="math notranslate nohighlight">\(C^8_4不同\)</span> ?</p>
+<ol class="upperalpha simple">
+<li><p><span class="math notranslate nohighlight">\((x+1)^7\)</span> 展開後, <span class="math notranslate nohighlight">\(x^3\)</span> 跟 <span class="math notranslate nohighlight">\(x^4\)</span> 的係數和</p></li>
+<li><p>每個人單手只能出正面或反面，8個人恰好4正4反的方法數</p></li>
+<li><p>8人分兩組的方法數</p></li>
+<li><p>「歐拉歐拉歐拉歐拉」排成一列的方法數</p></li>
+<li><p>從11個大小相同的位置取4個恰不相鄰的位置的方法數</p></li>
+</ol>
+<hr class="docutils"/>
+<ol class="upperalpha simple">
+<li><p><span class="math notranslate nohighlight">\(x^3\)</span> 係數為 <span class="math notranslate nohighlight">\(C^7_3\)</span> <span class="math notranslate nohighlight">\(x^4\)</span> 係數為 <span class="math notranslate nohighlight">\(C^7_4\)</span> 而這兩個相加 <span class="math notranslate nohighlight">\(C^7_3 + C^7_4 = C^8_4\)</span></p></li>
+<li><p>就是將8個人分成兩種人，正面的人跟反面的人，每種人個站4個，也就是 <span class="math notranslate nohighlight">\(\frac{8!}{4!4!}\)</span> ，這剛好也是 <span class="math notranslate nohighlight">\(C^8_4\)</span> 的定義</p></li>
+<li><p>這個是用人選組(不是組選人，因為如果兩組選到同一個人的話是要把它對切嗎)，也就是 <span class="math notranslate nohighlight">\(2^8\)</span> 種</p></li>
+<li><p>我不知道</p></li>
+<li><p>這個東東最少需要8個位置：前一(或後一)+中三+原本四個位置，然後我們要在這8個位置找4個不相鄰的空位督，也就是 <span class="math notranslate nohighlight">\(C^8_4\)</span></p></li>
+</ol>
+</section>
+<section id="id3">
+<h2>到底成績是多少<a class="headerlink" href="#id3" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id3'"><span>#</span></a></h2>
+<p>有一班有35個人，一次大考時，國文有及格25個，英文17個，數學14個，請問下列條件的人數</p>
+<div class="line-block">
+<div class="line">只有數學及格的</div>
+<div class="line">只有國文跟英文及格的</div>
+<div class="line">三個科目都及格的</div>
+<div class="line">都不及格的</div>
+</div>
+<hr class="docutils"/>
+<p>定義</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span><code><span id="line-1">國文及格為A集合
+</span><span id="line-2">英文為B
+</span><span id="line-3">數學為C
+</span></code></pre></div>
+</div>
+<p>所以可以描述成</p>
+<div class="math notranslate nohighlight">
+\[n(A \cup B \cup C) = 25+17+14 - [n(A \cap B) + n(B \cap C) + n(A \cap C)] + n(A\cap B\cap C)\]</div>
+<p>假設沒有人都不及格 <span class="math notranslate nohighlight">\(\Rightarrow n(A \cup B \cup C) = 35\)</span></p>
+<p>(將 <span class="math notranslate nohighlight">\(n(A \cap B) + n(B \cap C) + n(A \cap C)\)</span> 簡化為 x, <span class="math notranslate nohighlight">\(n(A\cap B\cap C)\)</span> 簡化為y)</p>
+<div class="math notranslate nohighlight">
+\[25+17+14-x+y = 35 \Rightarrow 56-x+y=35\]</div>
+<div class="math notranslate nohighlight">
+\[x-y = 21\]</div>
+</section>
+</section>
+</div></div><aside class="hidden text-sm xl:block" id="right-sidebar">
+<div class="sticky top-16 -mt-10 max-h-[calc(100vh-5rem)] overflow-y-auto pt-6 space-y-2"><p class="font-medium">On this page</p>
+<ul>
+<li><a :data-current="activeSection === '#id2'" class="reference internal" href="#id2">交集問題</a></li>
+<li><a :data-current="activeSection === '#c-8-4'" class="reference internal" href="#c-8-4"><span class="math notranslate nohighlight">\(C^8_4\)</span> 之謎</a></li>
+<li><a :data-current="activeSection === '#id3'" class="reference internal" href="#id3">到底成績是多少</a></li>
+</ul>
+</div>
+</aside>
 </main>
 </div>
 </div><footer class="py-6 border-t border-border md:py-0">

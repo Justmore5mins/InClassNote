@@ -17,7 +17,7 @@ extensions = [
     'sphinx.ext.autosectionlabel',
     'sphinx_tabs.tabs',
     'sphinxawesome_theme',
-    'sphinx_design'
+    'sphinx_design',
 ]
 
 templates_path = ['_templates']

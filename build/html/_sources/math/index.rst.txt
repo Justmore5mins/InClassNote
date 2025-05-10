@@ -11,4 +11,3 @@
    permutation
    combine
    chance
-   questions
