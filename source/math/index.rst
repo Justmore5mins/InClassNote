@@ -10,3 +10,5 @@
    counting
    permutation
    combine
+   chance
+   questions
