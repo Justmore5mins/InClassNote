@@ -43,7 +43,7 @@
     補集 :math:`A^\prime` 就是A不發生的事件
 
 .. tip::
-    如果A跟B不會同時發生( :math:`A \cap B = \varnothing` )我們就稱他們為互斥事件，例如你不會同時點可樂跟不點可樂
+    如果A跟B不會同時發生( :math:`A \cap B = \varnothing` )我們就稱他們為互斥事件，例如你不會同時點可樂又不點可樂
 
 .. tip::
     在計算一個機率的補集的時候長這樣 :math:`P (A^\prime) = 1-P(A)`
