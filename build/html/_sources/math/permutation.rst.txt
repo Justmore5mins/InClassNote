@@ -76,6 +76,7 @@
 我們先順時針把它編號abcdefg，這時他們的排法可能有這些
 
 .. code-block:: text
+
     abcdefg
     acbdegf
     adebfeg
@@ -211,7 +212,7 @@
    | 不過C跟D的方法有 :math:`n(C\cup D) = n(C) + n(D) - n(C \cap D) = 87` 種 ，再用全部減掉它變成 120-87=33種
 
 為什麼吃麥當勞吃到後台去了
-++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++
 
 .. image:: /_static/math/roadplanning2.png
     :align: center
@@ -219,3 +220,31 @@
 
 一個餐點在製作時需要經過很多步驟，其中最重要的一個步驟就是QC(品質檢驗)，是每個產品的必經歷程，今天一個大麥克從這個生產線出發，
 經過C點(品質檢驗點)之後才能出餐，那這樣的話他有多少路線可以跑？
+
+.. note::
+    框框不算，不能走回頭路
+
+先解第一層跟第二層
+
+.. math::
+    3\times 2
+
+再看C點前後的狀況
+    假設走左邊兩條(也就是只能往右彎)
+
+    .. math::
+        2\times 1 \times 3
+
+    假設走右邊一條(也就是只能往左彎)
+
+    .. math::
+        1\times 2\times 3
+
+最後再把它算出來
+
+.. math::
+    3\times 2(2\times 1\times 3 + 1\times 2\times 3) = 72
+
+.. image:: https://memeprod.ap-south-1.linodeobjects.com/user-template-thumbnail/cd2a13f4111eaa931fec519cc7c41a8a.jpg
+    :width: 60%
+    :align: center
