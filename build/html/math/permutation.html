@@ -199,23 +199,20 @@
 <section id="id8">
 <h2>小練習<a class="headerlink" href="#id8" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id8'"><span>#</span></a></h2>
 <section id="id9">
-<h3>數字排列<a class="headerlink" href="#id9" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id9'"><span>#</span></a></h3>
-<p>請問0~9分別在重複與不重複的情況下有幾種排法？</p>
-<dl>
-<dt>重複的方式</dt><dd><div class="line-block">
-<div class="line">第一個有九種(0不行)</div>
-<div class="line">第二跟第三個有十種</div>
-<div class="line">所以有 <span class="math notranslate nohighlight">\(9 \times 10\times 10 = 900\)</span> 種</div>
+<h3>排排站時間<a class="headerlink" href="#id9" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id9'"><span>#</span></a></h3>
+<p>今天有ABCDEFG等共六人要一起拍照，其中AB是生仇大恨所以不能站在一起，然後C因為個人因素所以不能站在第三個，請問這樣的話有多少方法數可以用</p>
+<hr class="docutils"/>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>這種不要什麼的題目用反面解會比較快</p>
 </div>
-</dd>
-<dt>不重複的方式</dt><dd><div class="line-block">
-<div class="line">第一個位置有9個數字可以選(0不行所以是九個)</div>
-<div class="line">第二個位置有9個(一個數字已經被挑走了)</div>
-<div class="line">第三個位置有8個(兩個數字被挑走了)</div>
-<div class="line">所以有 <span class="math notranslate nohighlight">\(9\times 9\times 8 = 648\)</span> 種</div>
-</div>
-</dd>
-</dl>
+<p>我們先把AB黏在一起，這樣的話他們的方法數有</p>
+<div class="math notranslate nohighlight">
+\[4!\times C^5_1\times 2! = 5!\times 2! = 240\]</div>
+<p>然後再讓C站第三個</p>
+<div class="math notranslate nohighlight">
+\[5!\]</div>
+<p>(因為假設將C固定的話剩下人隨便排就有5!種，忘記的話請去看 <a class="reference internal" href="#id2"><span class="std std-ref">直線排列</span></a> )</p>
 </section>
 <section id="id10">
 <h3>站在一起拍照<a class="headerlink" href="#id10" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id10'"><span>#</span></a></h3>
@@ -334,7 +331,7 @@
 <li><a :data-current="activeSection === '#id6'" class="reference internal" href="#id6">重複排列</a></li>
 <li><a :data-current="activeSection === '#id7'" class="reference internal" href="#id7">東西選人跟人選東西</a></li>
 <li><a :data-current="activeSection === '#id8'" class="reference internal" href="#id8">小練習</a><ul>
-<li><a :data-current="activeSection === '#id9'" class="reference internal" href="#id9">數字排列</a></li>
+<li><a :data-current="activeSection === '#id9'" class="reference internal" href="#id9">排排站時間</a></li>
 <li><a :data-current="activeSection === '#id10'" class="reference internal" href="#id10">站在一起拍照</a></li>
 <li><a :data-current="activeSection === '#id12'" class="reference internal" href="#id12">又要去吃麥當勞</a></li>
 <li><a :data-current="activeSection === '#id13'" class="reference internal" href="#id13">走捷徑</a></li>

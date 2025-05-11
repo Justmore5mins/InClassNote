@@ -32,3 +32,4 @@ html_permalinks_icon = '<span>#</span>'
 html_theme = 'sphinxawesome_theme'
 html_title = "上課的筆記"
 html_static_path = ['_static']
+html_css_file = ['style.css']
