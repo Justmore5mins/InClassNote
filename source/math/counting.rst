@@ -266,3 +266,11 @@
 5. 這是對的(如果不知道為什麼的話請去面數學老師思過謝謝)
 
 ----
+
+POV:當你面數學老師思過的時候
+
+數學老師：
+
+.. image:: https://memeprod.sgp1.digitaloceanspaces.com/user-wtf/1617876953425.jpg
+    :width: 60%
+    :align: center

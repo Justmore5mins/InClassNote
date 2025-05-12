@@ -174,6 +174,110 @@
 </section>
 <section id="id4">
 <h2>小練習<a class="headerlink" href="#id4" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id4'"><span>#</span></a></h2>
+<section id="id5">
+<h3>找數字<a class="headerlink" href="#id5" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id5'"><span>#</span></a></h3>
+<p>今天有 abcd 四位數， 而且 a &lt; b &lt; c &lt; d，請問這樣的四位數共有幾個</p>
+<p>我們要選四位數也就是</p>
+<div class="math notranslate nohighlight">
+\[C^{10}_4\]</div>
+<p>然後扣掉開頭為0的部分(0bcd)</p>
+<div class="math notranslate nohighlight">
+\[C^9_3\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>因為這個挑出來是唯一值(不會重複) <span class="math notranslate nohighlight">\(\rightarrow\)</span> 可以弄成符合條件的數字</p>
+</div>
+<p>所以總共是</p>
+<div class="math notranslate nohighlight">
+\[C^{10}_4 - C^9_3 = 126\]</div>
+<p>種</p>
+</section>
+<section id="ep-2">
+<h3>找數字EP.2<a class="headerlink" href="#ep-2" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#ep-2'"><span>#</span></a></h3>
+<p>三味數abc，而且 <span class="math notranslate nohighlight">\(a \leq b\leq c\)</span> 有幾種</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>小公式 <span class="math notranslate nohighlight">\(C^{n+r-1}_{r}\)</span></p>
+<p>其中：</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span><code><span id="line-1">n = 總數
+</span><span id="line-2">r = 要挑出的數量
+</span></code></pre></div>
+</div>
+</div>
+<div class="math notranslate nohighlight">
+\[C^{10+3-1}_{3} = C^{12}_{3} = 220\]</div>
+<p>還要減一因為000的情況，所以有219種</p>
+</section>
+<section id="c-n-k">
+<h3><span class="math notranslate nohighlight">\(C^n_k\)</span> 串串樂<a class="headerlink" href="#c-n-k" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#c-n-k'"><span>#</span></a></h3>
+<p>已知</p>
+<div class="math notranslate nohighlight">
+\[C^{10}_{10}+C^{11}_{10}+C^{12}_{10}...C^{20}_{10} = C^n_k\]</div>
+<p>但是 k&gt;10,則n+k = ?</p>
+<p>我們可以將 <span class="math notranslate nohighlight">\(C^{10}_{10}\)</span> 換成 <span class="math notranslate nohighlight">\(C^{11}_{11}\)</span></p>
+<p>然後就可以 <span class="math notranslate nohighlight">\(C_{11}^{11} + C^{11}_{10} = C^{12}_{11}\)</span></p>
+<p>以此類推變成</p>
+<div class="math notranslate nohighlight">
+\[C^{20}_{11} + C^{20}_{10} = C^{21}_{11} = 32\]</div>
+</section>
+<section id="id6">
+<h3>好多好多次方<a class="headerlink" href="#id6" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id6'"><span>#</span></a></h3>
+<p><span class="math notranslate nohighlight">\(11^{40}\)</span> 的百位數字(a)跟十位數字(b)組合為(a,b)為多少</p>
+<p><span class="math notranslate nohighlight">\(11^{40}\)</span> 可以變成 <span class="math notranslate nohighlight">\((10+1)^{40}\)</span></p>
+<p>我們要找的目標是 <span class="math notranslate nohighlight">\(11^{40}\)</span> 除以1000的餘數(寫作 <span class="math notranslate nohighlight">\(11^{40} mod 1000\)</span> )</p>
+<p>也就是要找10的兩次(因為40取n都很大，不然都是網上取一位看)跟一次還有0次，也就是</p>
+<div class="math notranslate nohighlight">
+\[C^{40}_{2}\times 10^2 + C^{40}_{1}\times 10^1 + C^{40}_{0}\times 10^0 = 78000 + 400 + 1\]</div>
+<p>然後找我們要的答案也就是(0,1)</p>
+</section>
+<section id="id7">
+<h3>放球時間<a class="headerlink" href="#id7" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id7'"><span>#</span></a></h3>
+<p>今天有5顆不一樣的球丟到三個箱子裡面，有幾種放法？</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>反面姐會比較快</p>
+</div>
+<p>總共有 <span class="math notranslate nohighlight">\(3^5\)</span> 種(球選箱子)</p>
+<p>球只有丟到兩的箱子裡面(找兩個箱子隨便進)</p>
+<div class="math notranslate nohighlight">
+\[C^3_2 \times 2^5 = 3\times 32 = 96\]</div>
+<p>然後只有一個箱子的情況被多扣了</p>
+<div class="math notranslate nohighlight">
+\[C^3_1 = 3\]</div>
+<p>所以總共是</p>
+<div class="math notranslate nohighlight">
+\[3^5 - C^3_2 \times 2^5 + C^3_1 = 150\]</div>
+</section>
+<section id="id8">
+<h3>有種公園阿伯的既視感(?)<a class="headerlink" href="#id8" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id8'"><span>#</span></a></h3>
+<p>今天你有一盤棋分別有〔將、士、士、象、象、車、車、馬、馬、包、包、卒、卒、卒、卒、卒〕，總共有幾種排法</p>
+<p>四個旗子都不一樣(七種取4種)然後再排列</p>
+<div class="math notranslate nohighlight">
+\[C^7_4 \times 4! = 840\]</div>
+<p>兩個一樣+兩個不一樣再排列</p>
+<div class="math notranslate nohighlight">
+\[C^6_1 \times C^6_2 \times \frac{4!}{2!} = 6*15*4*3 = 1080\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><span class="math notranslate nohighlight">\(C^6_1\)</span> 是找一組兩個的，因為沒有將所以有六種
+| 後面 <span class="math notranslate nohighlight">\(C^6_2\)</span> 是從剩下的挑兩個一個(所以將有支援)
+| 然後再用重複物排列</p>
+</div>
+<p>兩個兩個一樣</p>
+<div class="math notranslate nohighlight">
+\[C^6_2 \times \frac{4!}{2!2!} = 90\]</div>
+<p>三個一樣一個不一樣</p>
+<p>只有一種棋子有大於三顆，然後剩下挑一個，再排列</p>
+<div class="math notranslate nohighlight">
+\[1\times C^6_1\times \frac{4!}{3!} = 24\]</div>
+<p>四個都一樣</p>
+<p>只有卒大於四個所以只有一種</p>
+<p>最後加起來</p>
+<div class="math notranslate nohighlight">
+\[840+1+1080+24+90 = 2035\]</div>
+<a class="reference internal image-reference" href="https://memes.tw/user-tmp/1747061909378.png"><img alt="https://memes.tw/user-tmp/1747061909378.png" class="align-center" src="https://memes.tw/user-tmp/1747061909378.png" style="width: 60%;"/>
+</a>
+</section>
 </section>
 </section>
 </div></div><aside class="hidden text-sm xl:block" id="right-sidebar">
@@ -181,7 +285,15 @@
 <ul>
 <li><a :data-current="activeSection === '#id2'" class="reference internal" href="#id2">基本公式</a></li>
 <li><a :data-current="activeSection === '#id3'" class="reference internal" href="#id3">二項式定理</a></li>
-<li><a :data-current="activeSection === '#id4'" class="reference internal" href="#id4">小練習</a></li>
+<li><a :data-current="activeSection === '#id4'" class="reference internal" href="#id4">小練習</a><ul>
+<li><a :data-current="activeSection === '#id5'" class="reference internal" href="#id5">找數字</a></li>
+<li><a :data-current="activeSection === '#ep-2'" class="reference internal" href="#ep-2">找數字EP.2</a></li>
+<li><a :data-current="activeSection === '#c-n-k'" class="reference internal" href="#c-n-k"><span class="math notranslate nohighlight">\(C^n_k\)</span> 串串樂</a></li>
+<li><a :data-current="activeSection === '#id6'" class="reference internal" href="#id6">好多好多次方</a></li>
+<li><a :data-current="activeSection === '#id7'" class="reference internal" href="#id7">放球時間</a></li>
+<li><a :data-current="activeSection === '#id8'" class="reference internal" href="#id8">有種公園阿伯的既視感(?)</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </aside>
