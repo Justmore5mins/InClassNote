@@ -166,6 +166,17 @@
 \[P(A \cup B \cup C) = [P(A) + P(B) + P(C)] - [P(A \cap B) + P(B \cap C) + P(A \cap C)] + [P(A \cap B \cap C)]\]</div>
 </section>
 </section>
+<section id="id6">
+<h2>小練習<a class="headerlink" href="#id6" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id6'"><span>#</span></a></h2>
+<p>今天有一個神秘箱子，裡面有6顆紅球跟n個白球，一次拿兩顆的為一紅一白的機率是 <span class="math notranslate nohighlight">\(\frac{8}{15}\)</span> ，請問白球有多少顆</p>
+<p>總共符合條件的情況有6n種 ( <span class="math notranslate nohighlight">\(C^6_1C^n_1\)</span> )，他的組合數有 <span class="math notranslate nohighlight">\(C^{6+n}_2\)</span> 種，我們也可以得到這個機率式</p>
+<div class="math notranslate nohighlight">
+\[\frac{6n}{\frac{(n+6)(n+5)}{2}} = \frac{12n}{(n+6)(n+5)} = \frac{8}{15}\]</div>
+<p>在一波操作猛如虎過後我們得出</p>
+<div class="math notranslate nohighlight">
+\[x = \frac{15}{2} or 4\]</div>
+<p>很明顯沒有7.5顆球這種鬼東西，所以白球有四顆</p>
+</section>
 </section>
 </div></div><aside class="hidden text-sm xl:block" id="right-sidebar">
 <div class="sticky top-16 -mt-10 max-h-[calc(100vh-5rem)] overflow-y-auto pt-6 space-y-2"><p class="font-medium">On this page</p>
@@ -176,6 +187,7 @@
 <li><a :data-current="activeSection === '#id5'" class="reference internal" href="#id5">古典機率</a></li>
 </ul>
 </li>
+<li><a :data-current="activeSection === '#id6'" class="reference internal" href="#id6">小練習</a></li>
 </ul>
 </div>
 </aside>
