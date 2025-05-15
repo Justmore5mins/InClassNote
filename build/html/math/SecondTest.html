@@ -7,17 +7,17 @@
 <meta content="white" media="(prefers-color-scheme: light)" name="theme-color"/>
 <meta content="black" media="(prefers-color-scheme: dark)" name="theme-color"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>組合 | 上課的筆記</title>
-<meta content="組合 | 上課的筆記" property="og:title"/>
-<meta content="組合 | 上課的筆記" name="twitter:title"/>
+<title>第二次段考 | 上課的筆記</title>
+<meta content="第二次段考 | 上課的筆記" property="og:title"/>
+<meta content="第二次段考 | 上課的筆記" name="twitter:title"/>
 <link href="../_static/pygments.css?v=e72c8e07" rel="stylesheet" type="text/css"/>
 <link href="../_static/theme.css?v=42baaae4" rel="stylesheet" type="text/css"/>
 <link href="../_static/sphinx-design.min.css?v=95c83b7e" rel="stylesheet" type="text/css"/>
 <link href="../_static/awesome-sphinx-design.css?v=15e0fffa" rel="stylesheet" type="text/css"/>
 <link href="../search.html" rel="search" title="Search"/>
 <link href="../genindex.html" rel="index" title="Index"/>
-<link href="chance.html" rel="next" title="古典機率"/>
-<link href="permutation.html" rel="prev" title="排列"/>
+<link href="expection.html" rel="next" title="數學期望值"/>
+<link href="chance.html" rel="prev" title="古典機率"/>
 <script>
     <!-- Prevent Flash of wrong theme -->
       const userPreference = localStorage.getItem('darkMode');
@@ -75,9 +75,9 @@
 <li class="toctree-l1 current" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="index.html">數學啊啊啊<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul class="current" x-show="expanded">
 <li class="toctree-l2"><a class="reference internal" href="counting.html">計數原理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="permutation.html">排列</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">組合</a></li>
+<li class="toctree-l2"><a class="reference internal" href="combine.html">組合</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chance.html">古典機率</a></li>
-<li class="toctree-l2"><a class="reference internal" href="SecondTest.html">第二次段考</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">第二次段考</a></li>
 <li class="toctree-l2"><a class="reference internal" href="expection.html">數學期望值</a></li>
 </ul>
 </li>
@@ -101,183 +101,36 @@
 </svg>
 </a>
 <div class="mr-1">/</div><a class="hover:text-foreground overflow-hidden text-ellipsis whitespace-nowrap" href="index.html">數學啊啊啊</a>
-<div class="mr-1">/</div><span aria-current="page" class="font-medium text-foreground overflow-hidden text-ellipsis whitespace-nowrap">組合</span>
+<div class="mr-1">/</div><span aria-current="page" class="font-medium text-foreground overflow-hidden text-ellipsis whitespace-nowrap">第二次段考</span>
 </nav>
 <div id="content" role="main">
 <section id="id1">
-<h1>組合<a class="headerlink" href="#id1" title="Link to this heading"><span>#</span></a></h1>
+<h1>第二次段考<a class="headerlink" href="#id1" title="Link to this heading"><span>#</span></a></h1>
+<p>這邊是第二次段考的解</p>
 <section id="id2">
-<h2>基本公式<a class="headerlink" href="#id2" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id2'"><span>#</span></a></h2>
-<p>不同於排列，組合他不看順序，也就是拿出來就放在那邊，什麼也不做，他的公式長得像這樣</p>
-<div class="math notranslate nohighlight">
-\[C^{n}_{k} = \frac{n!}{k!(n-k)!}\]</div>
-<p>其中</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span><code><span id="line-1">n = 總共的數量
-</span><span id="line-2">k = 要被挑出來的數量
-</span></code></pre></div>
-</div>
-<p>眼尖的你應該會發現，P跟C只差一個 <span class="math notranslate nohighlight">\(\frac{1}{k!}\)</span> ，所以我們可以寫成</p>
-<div class="math notranslate nohighlight">
-\[\frac{P^{n}_{k}}{k!} = C^{n}_{k}\]</div>
-<p>或是</p>
-<div class="math notranslate nohighlight">
-\[C^{n}_{k} \times k! = P_{k}^{n}\]</div>
-<p>非常的好用。</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>因為一些原因，通常我們會用 <span class="math notranslate nohighlight">\(C^{n}_{k} \times k!\)</span> 取代 <span class="math notranslate nohighlight">\(P^{n}_{k}\)</span></p>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>一樣是定義， <span class="math notranslate nohighlight">\(C^{n}_{0} = 1\)</span> ，翻譯成中文就是從n個選項裡面不選東西(那選個O)</p>
-</div>
-<hr class="docutils"/>
-<p>今天你又在麥當勞，看到有一群學生要一起點漢堡，總共有12種漢堡要選9種，那請問有幾種組合呢？</p>
-<p>我們有兩種解法：從12種選9種與12種剩3種</p>
-<div class="math notranslate nohighlight">
-\[C^{12}_{9} = \frac{12!}{9!(12-9)!} = \frac{12!}{3!(12-3)!}\]</div>
-<p>眼尖的你發現他們兩個算出來的結果是一樣的，所以可以利用這種方式來簡化計算</p>
-</section>
+<h2>多選題<a class="headerlink" href="#id2" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id2'"><span>#</span></a></h2>
 <section id="id3">
-<h2>二項式定理<a class="headerlink" href="#id3" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id3'"><span>#</span></a></h2>
-<p>請你回想一下，我們國中上學期學過的平方跟立方的展開式長這樣</p>
-<div class="math notranslate nohighlight">
-\[(x+y)^2 = x^2 + 2xy + y^2\]</div>
-<div class="math notranslate nohighlight">
-\[(x+y)^3 = x^3 + 3x^2y+3xy^2 + y^3\]</div>
-<p>吃完麥當勞很閒的你把三次方的展開式再展開</p>
-<div class="math notranslate nohighlight">
-\[(x+y)^3 = (x+y)(x+y)(x+y)\]</div>
-<div class="math notranslate nohighlight">
-\[= (x+y)(xx+xy+yx+yy)\]</div>
-<div class="math notranslate nohighlight">
-\[= xxx + xxy + xyx + xyy + yxx + yxy + yyx + yyy\]</div>
-<p>有沒有組合的恐懼出現了呢？</p>
-<p>讓我們再看看他的係數怎來的</p>
+<h3>哪一個是真的？<a class="headerlink" href="#id3" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id3'"><span>#</span></a></h3>
 <ol class="arabic simple">
-<li><p>都不選y(全x)的情況下就有 <span class="math notranslate nohighlight">\(C^{3}_{0} = 1\)</span> 種</p></li>
-<li><p>選一個y的情況下有 <span class="math notranslate nohighlight">\(C^{3}_{1} = 3\)</span> 種</p></li>
-<li><p>選兩個y有 <span class="math notranslate nohighlight">\(C^{3}_{2} = 3\)</span> 種</p></li>
-<li><p>都選y有 <span class="math notranslate nohighlight">\(C^{3}_{3} = 1\)</span> 種</p></li>
+<li><p><span class="math notranslate nohighlight">\(A = \{x | 1 \leq x \leq 3, x \in \mathbb{R}\}, B = \{x | 2 &lt; x &lt; 4, x \in R\}\)</span> 則 <span class="math notranslate nohighlight">\(A \cap B = \{x|2\leq x\leq 3, x \in \mathbb{R}\}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(C^{98}_{50}+C^{98}_{49} = C^{99}_{49}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\sum_{n=0}^{5}\ C^{n+10}_{n} = C^{16}_5\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(-C^{7}_{1}+C^{7}_{2}-C^{7}_{3}+C^{7}_{4}-C^{7}_{5}+C^{7}_{6}-C^{7}_{7} = 1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\sum_{n=1}^{5} C^{11}_{n} = 1024\)</span></p></li>
 </ol>
-<p>所以他可以變成</p>
-<div class="math notranslate nohighlight">
-\[(x+y)^3 = C^{3}_{0} x^3 + C^{3}_{1} x^2y + C^{3}_{2} xy^2 + C^{3}_{3} y^3\]</div>
-<p>然後當你越列越多次方之後，然後剛剛好把它寫成三角形就變成這樣</p>
-<a class="reference internal image-reference" href="https://www.ntsec.edu.tw/UserFiles/image/61-6_12_fig1.gif"><img alt="https://www.ntsec.edu.tw/UserFiles/image/61-6_12_fig1.gif" class="align-center" src="https://www.ntsec.edu.tw/UserFiles/image/61-6_12_fig1.gif" style="width: 80%;"/>
-</a>
-<p>還有這樣</p>
-<img alt="https://blog.jayinnn.dev/image/Pascaltrianglewithc.png" class="align-center" src="https://blog.jayinnn.dev/image/Pascaltrianglewithc.png"/>
-<p>你有沒有發現它上面兩個加起來會等於他下面那一個(如同紅色三角形那樣)(不信可以自己算算看)，他的公式長這樣</p>
-<div class="math notranslate nohighlight">
-\[C^{n-1}_{k-1} + C^{n-1}_{k} = C^n_k\]</div>
-<p>或是可以理解為上面一樣，下面差一留大的。</p>
-<p>還有當你用橫排看的時候，他其實就是 <span class="math notranslate nohighlight">\((x+y)^n\)</span> 的係數，所以當我們 x=y=1 的時候，<span class="math notranslate nohighlight">\(\sum_{i=0}^{n} C^{n}_{i} = 2^n\)</span> ，是不是非常美妙</p>
+<hr class="docutils"/>
+<ol class="arabic simple">
+<li><p>A的範圍是123,B是只有3,然後 <span class="math notranslate nohighlight">\(\cap\)</span> 是找少的那個，所以 <span class="math notranslate nohighlight">\(A \cap B = \{3\}\)</span></p></li>
+<li><p>如果忘記的話請去看 <a class="reference internal" href="combine.html#id3"><span class="std std-ref">二項式定理</span></a></p></li>
+<li><p>忘記得話請一樣去看 <a class="reference internal" href="combine.html#id3"><span class="std std-ref">二項式定理</span></a> 然後用連鎖律(chain rule)把它串起來</p></li>
+<li><p>用手算就知道了</p></li>
+<li><p>因為</p></li>
+</ol>
 </section>
 <section id="id4">
-<h2>小練習<a class="headerlink" href="#id4" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id4'"><span>#</span></a></h2>
-<section id="id5">
-<h3>找數字<a class="headerlink" href="#id5" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id5'"><span>#</span></a></h3>
-<p>今天有 abcd 四位數， 而且 a &lt; b &lt; c &lt; d，請問這樣的四位數共有幾個</p>
-<p>我們要選四位數也就是</p>
-<div class="math notranslate nohighlight">
-\[C^{10}_4\]</div>
-<p>然後扣掉開頭為0的部分(0bcd)</p>
-<div class="math notranslate nohighlight">
-\[C^9_3\]</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>因為這個挑出來是唯一值(不會重複) <span class="math notranslate nohighlight">\(\rightarrow\)</span> 可以弄成符合條件的數字</p>
-</div>
-<p>所以總共是</p>
-<div class="math notranslate nohighlight">
-\[C^{10}_4 - C^9_3 = 126\]</div>
-<p>種</p>
-</section>
-<section id="ep-2">
-<h3>找數字EP.2<a class="headerlink" href="#ep-2" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#ep-2'"><span>#</span></a></h3>
-<p>三味數abc，而且 <span class="math notranslate nohighlight">\(a \leq b\leq c\)</span> 有幾種</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>小公式 <span class="math notranslate nohighlight">\(C^{n+r-1}_{r}\)</span></p>
-<p>其中：</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span><code><span id="line-1">n = 總數
-</span><span id="line-2">r = 要挑出的數量
-</span></code></pre></div>
-</div>
-</div>
-<div class="math notranslate nohighlight">
-\[C^{10+3-1}_{3} = C^{12}_{3} = 220\]</div>
-<p>還要減一因為000的情況，所以有219種</p>
-</section>
-<section id="c-n-k">
-<h3><span class="math notranslate nohighlight">\(C^n_k\)</span> 串串樂<a class="headerlink" href="#c-n-k" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#c-n-k'"><span>#</span></a></h3>
-<p>已知</p>
-<div class="math notranslate nohighlight">
-\[C^{10}_{10}+C^{11}_{10}+C^{12}_{10}...C^{20}_{10} = C^n_k\]</div>
-<p>但是 k&gt;10,則n+k = ?</p>
-<p>我們可以將 <span class="math notranslate nohighlight">\(C^{10}_{10}\)</span> 換成 <span class="math notranslate nohighlight">\(C^{11}_{11}\)</span></p>
-<p>然後就可以 <span class="math notranslate nohighlight">\(C_{11}^{11} + C^{11}_{10} = C^{12}_{11}\)</span></p>
-<p>以此類推變成</p>
-<div class="math notranslate nohighlight">
-\[C^{20}_{11} + C^{20}_{10} = C^{21}_{11} = 32\]</div>
-</section>
-<section id="id6">
-<h3>好多好多次方<a class="headerlink" href="#id6" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id6'"><span>#</span></a></h3>
-<p><span class="math notranslate nohighlight">\(11^{40}\)</span> 的百位數字(a)跟十位數字(b)組合為(a,b)為多少</p>
-<p><span class="math notranslate nohighlight">\(11^{40}\)</span> 可以變成 <span class="math notranslate nohighlight">\((10+1)^{40}\)</span></p>
-<p>我們要找的目標是 <span class="math notranslate nohighlight">\(11^{40}\)</span> 除以1000的餘數(寫作 <span class="math notranslate nohighlight">\(11^{40} mod 1000\)</span> )</p>
-<p>也就是要找10的兩次(因為40取n都很大，不然都是網上取一位看)跟一次還有0次，也就是</p>
-<div class="math notranslate nohighlight">
-\[C^{40}_{2}\times 10^2 + C^{40}_{1}\times 10^1 + C^{40}_{0}\times 10^0 = 78000 + 400 + 1\]</div>
-<p>然後找我們要的答案也就是(0,1)</p>
-</section>
-<section id="id7">
-<h3>放球時間<a class="headerlink" href="#id7" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id7'"><span>#</span></a></h3>
-<p>今天有5顆不一樣的球丟到三個箱子裡面，有幾種放法？</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>反面姐會比較快</p>
-</div>
-<p>總共有 <span class="math notranslate nohighlight">\(3^5\)</span> 種(球選箱子)</p>
-<p>球只有丟到兩的箱子裡面(找兩個箱子隨便進)</p>
-<div class="math notranslate nohighlight">
-\[C^3_2 \times 2^5 = 3\times 32 = 96\]</div>
-<p>然後只有一個箱子的情況被多扣了</p>
-<div class="math notranslate nohighlight">
-\[C^3_1 = 3\]</div>
-<p>所以總共是</p>
-<div class="math notranslate nohighlight">
-\[3^5 - C^3_2 \times 2^5 + C^3_1 = 150\]</div>
-</section>
-<section id="id8">
-<h3>有種公園阿伯的既視感(?)<a class="headerlink" href="#id8" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id8'"><span>#</span></a></h3>
-<p>今天你有一盤棋分別有〔將、士、士、象、象、車、車、馬、馬、包、包、卒、卒、卒、卒、卒〕，總共有幾種排法</p>
-<p>四個旗子都不一樣(七種取4種)然後再排列</p>
-<div class="math notranslate nohighlight">
-\[C^7_4 \times 4! = 840\]</div>
-<p>兩個一樣+兩個不一樣再排列</p>
-<div class="math notranslate nohighlight">
-\[C^6_1 \times C^6_2 \times \frac{4!}{2!} = 6*15*4*3 = 1080\]</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><span class="math notranslate nohighlight">\(C^6_1\)</span> 是找一組兩個的，因為沒有將所以有六種
-| 後面 <span class="math notranslate nohighlight">\(C^6_2\)</span> 是從剩下的挑兩個一個(所以將有支援)
-| 然後再用重複物排列</p>
-</div>
-<p>兩個兩個一樣</p>
-<div class="math notranslate nohighlight">
-\[C^6_2 \times \frac{4!}{2!2!} = 90\]</div>
-<p>三個一樣一個不一樣</p>
-<p>只有一種棋子有大於三顆，然後剩下挑一個，再排列</p>
-<div class="math notranslate nohighlight">
-\[1\times C^6_1\times \frac{4!}{3!} = 24\]</div>
-<p>四個都一樣</p>
-<p>只有卒大於四個所以只有一種</p>
-<p>最後加起來</p>
-<div class="math notranslate nohighlight">
-\[840+1+1080+24+90 = 2035\]</div>
-<a class="reference internal image-reference" href="https://memes.tw/user-tmp/1747061909378.png"><img alt="https://memes.tw/user-tmp/1747061909378.png" class="align-center" src="https://memes.tw/user-tmp/1747061909378.png" style="width: 60%;"/>
+<h3>記得交手機<a class="headerlink" href="#id4" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id4'"><span>#</span></a></h3>
+<p>教室裡有一個手機保管箱，共有30格，每個格子下法標住對億的座號，供學生盎至手機。現在某班學生中，已有24個同學將手機正確放置在自己的座號格子中，只剩下六個空格，此時阿中與阿和兩位同學因吃麥當勞遲到進班，個字將手機隨機讓入空格中的某一格，兩人放在不同格且不放在自己的座號格子中，共有幾種方法？</p>
+<a class="reference internal image-reference" href="https://memeprod.sgp1.digitaloceanspaces.com/user-wtf/1747183823997.jpg"><img alt="https://memeprod.sgp1.digitaloceanspaces.com/user-wtf/1747183823997.jpg" class="align-center" src="https://memeprod.sgp1.digitaloceanspaces.com/user-wtf/1747183823997.jpg" style="width: 60%;"/>
 </a>
 </section>
 </section>
@@ -285,15 +138,9 @@
 </div></div><aside class="hidden text-sm xl:block" id="right-sidebar">
 <div class="sticky top-16 -mt-10 max-h-[calc(100vh-5rem)] overflow-y-auto pt-6 space-y-2"><p class="font-medium">On this page</p>
 <ul>
-<li><a :data-current="activeSection === '#id2'" class="reference internal" href="#id2">基本公式</a></li>
-<li><a :data-current="activeSection === '#id3'" class="reference internal" href="#id3">二項式定理</a></li>
-<li><a :data-current="activeSection === '#id4'" class="reference internal" href="#id4">小練習</a><ul>
-<li><a :data-current="activeSection === '#id5'" class="reference internal" href="#id5">找數字</a></li>
-<li><a :data-current="activeSection === '#ep-2'" class="reference internal" href="#ep-2">找數字EP.2</a></li>
-<li><a :data-current="activeSection === '#c-n-k'" class="reference internal" href="#c-n-k"><span class="math notranslate nohighlight">\(C^n_k\)</span> 串串樂</a></li>
-<li><a :data-current="activeSection === '#id6'" class="reference internal" href="#id6">好多好多次方</a></li>
-<li><a :data-current="activeSection === '#id7'" class="reference internal" href="#id7">放球時間</a></li>
-<li><a :data-current="activeSection === '#id8'" class="reference internal" href="#id8">有種公園阿伯的既視感(?)</a></li>
+<li><a :data-current="activeSection === '#id2'" class="reference internal" href="#id2">多選題</a><ul>
+<li><a :data-current="activeSection === '#id3'" class="reference internal" href="#id3">哪一個是真的？</a></li>
+<li><a :data-current="activeSection === '#id4'" class="reference internal" href="#id4">記得交手機</a></li>
 </ul>
 </li>
 </ul>
