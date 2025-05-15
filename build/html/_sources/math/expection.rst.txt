@@ -39,11 +39,11 @@
 然後再用機率算出來
 
 .. math::
-    2000\times \frac{C^{2}_2}{C^{10}_{2}} + 1100\times \frac{C^2_1C^3_1}{C^{10}_2} + 1000\times \frac{C^3_2}{C^{10}_2} + 600\times \frac{C^3_1C^5_1}{C^{10}_2} + 200\times \frac{C^5_2}{C^{10}_2} = 1100
+    2000\times \frac{C^{2}_2}{C^{10}_{2}} + 1500\times \frac{C^2_1C^3_1}{C^{10}_2} + 1100\times \frac{C^2_1C^5_1}}{C^10_2} + 1000\times \frac{C^3_2}{C^{10}_2} + 600\times \frac{C^3_1C^5_1}{C^{10}_2} + 200\times \frac{C^5_2}{C^{10}_2} = 800
 
 然後再算數的你覺的這種題目太 :strike:`雞掰` 麻煩了，所以你想到另外一個簡單的方法
 
 今天他抽兩次 :math:`\rightarrow` 他每個東西都乘兩倍，所以他也可以算成這樣
 
 .. math::
-    \frac{100\times 10 + 500\times 6 + 1000\times 4}{10}
+    \frac{100\times 10 + 500\times 6 + 1000\times 4}{10} = 800
