@@ -39,7 +39,8 @@
 然後再用機率算出來
 
 .. math::
-    .. math:: 2000 \times \frac{\binom{2}{2}}{\binom{10}{2}} + 1500 \times \frac{\binom{2}{1} \binom{3}{1}}{\binom{10}{2}} + 1100 \times \frac{\binom{2}{1} \binom{5}{1}}{\binom{10}{2}} + 1000 \times \frac{\binom{3}{2}}{\binom{10}{2}} + 600 \times \frac{\binom{3}{1} \binom{5}{1}}{\binom{10}{2}} + 200 \times \frac{\binom{5}{2}}{\binom{10}{2}} = 800
+    
+    2000 \times \frac{\binom{2}{2}}{\binom{10}{2}} + 1500 \times \frac{\binom{2}{1} \binom{3}{1}}{\binom{10}{2}} + 1100 \times \frac{\binom{2}{1} \binom{5}{1}}{\binom{10}{2}} + 1000 \times \frac{\binom{3}{2}}{\binom{10}{2}} + 600 \times \frac{\binom{3}{1} \binom{5}{1}}{\binom{10}{2}} + 200 \times \frac{\binom{5}{2}}{\binom{10}{2}} = 800
 
 然後再算數的你覺的這種題目太 :strike:`雞掰` 麻煩了，所以你想到另外一個簡單的方法
 
