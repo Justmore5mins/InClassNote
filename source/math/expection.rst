@@ -45,5 +45,5 @@
 
 今天他抽兩次 :math:`\rightarrow` 他每個東西都乘兩倍，所以他也可以算成這樣
 
-.. math::
+.. math:: 
     \frac{100\times 10 + 500\times 6 + 1000\times 4}{10} = 800
