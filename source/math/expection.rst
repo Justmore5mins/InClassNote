@@ -39,7 +39,7 @@
 然後再用機率算出來
 
 .. math::
-    2000\times \frac{C^{2}_2}{C^{10}_{2}} + 1500\times \frac{C^2_1C^3_1}{C^{10}_2} + 1100\times \frac{C^2_1C^5_1}}{C^10_2} + 1000\times \frac{C^3_2}{C^{10}_2} + 600\times \frac{C^3_1C^5_1}{C^{10}_2} + 200\times \frac{C^5_2}{C^{10}_2} = 800
+    .. math:: 2000 \times \frac{\binom{2}{2}}{\binom{10}{2}} + 1500 \times \frac{\binom{2}{1} \binom{3}{1}}{\binom{10}{2}} + 1100 \times \frac{\binom{2}{1} \binom{5}{1}}{\binom{10}{2}} + 1000 \times \frac{\binom{3}{2}}{\binom{10}{2}} + 600 \times \frac{\binom{3}{1} \binom{5}{1}}{\binom{10}{2}} + 200 \times \frac{\binom{5}{2}}{\binom{10}{2}} = 800
 
 然後再算數的你覺的這種題目太 :strike:`雞掰` 麻煩了，所以你想到另外一個簡單的方法
 
