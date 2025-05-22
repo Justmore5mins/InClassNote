@@ -1,0 +1,84 @@
+三角函數
+===========
+
+今天你看到一個直角三角形
+
+.. image:: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROD3cUx-x6ssICsUviPAvCQ5kPrcsO6AGOFg&s
+    :width: 60%
+    :height: 400px
+    :align: center
+
+今天我們定義
+
+| 正弦 :math:`\sin \theta = \frac{a}{h}`
+| 餘弦 :math:`\cos \theta = \frac{b}{h}`
+| 正切 :math:`\tan \theta = \frac{a}{b}` 
+
+.. note::
+    我們也可以記成
+        
+    | 正弦 :math:`\sin \theta = \frac{對邊}{斜邊}`
+    | 餘弦 :math:`\cos \theta = \frac{鄰邊}{對邊}`
+    | 正切 :math:`\tan \theta = \frac{對邊}{鄰邊}` 
+
+假設今天a=5 b=12, c=13，那 :math:`\angle A` 的三角函數式多少
+
+.. math::
+    \sin A = \frac{5}{13}\\
+    \cos A = \frac{12}{13}\\
+    \tan A = \frac{5}{12}
+
+然後聰明的你看了看發現 :math:`\angle B` 的三角函數會等於
+
+.. math::
+    \sin B = \cos A\\
+    \cos B = \sin A\\
+
+是不是非常神奇
+
+.. image:: /_static/math/triangle.png
+    :width: 60%
+    :align: center
+
+請問 :math:`\tan \theta = ?`
+
+.. tip::
+    下面兩條邊的比例(左比右)=上面兩條邊的比例(右比左)
+
+那我們可以算出
+
+.. math::
+    \tan \theta = \frac{\frac{3}{2}}{3} = \frac{1}{2}
+
+其中 :math:`\frac{3}{2} = 4\times \frac{3}{8}` ，4是下面那條邊的長度(3:4:5), :math:`\frac{3}{8}` 是裡面那個三角形佔的比例
+
+小紀錄
+
+.. image:: /_static/math/traingles/tricirc.png
+    :width: 60%
+    :align: center
+
+.. note::
+    .. math::
+        \tan\theta = \frac{\sin\theta}{\cos\theta} \\
+        \sin^2 \theta+\cos^2\theta = 1
+
+.. todo:: Add the 30º and 60º table of sin cos and tan
+
+小練習
+---------
+
+試求下面圖剩餘線段的長度
+++++++++++++++++++++++++++++
+
+.. image:: /_static/math/traingles/q1.png
+    :width: 60%
+    :align: center
+
+    
+
+其中 :math:`\sin \theta = \frac{15}{17}, \cos \phi = \frac{3}{5}`
+
+根據上面的條件，我們可以知道 :math:`\overline{BD} = 15, \overline{BC} = 15\times\frac{3}{5}=9` ，再推斷出 :math:`\overline{DC} = 4\times3=12`
+
+非常的完美

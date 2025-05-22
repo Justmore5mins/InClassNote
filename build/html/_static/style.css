@@ -3,3 +3,43 @@
 body{
     font-family: "PingFang Regular", monospace;
 }
+
+/* spoiler.css */
+/* Base spoiler style */
+.spoiler {
+    color: transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: color 0.2s ease, background-color 0.2s ease;
+    user-select: none;
+    padding: 0 4px;
+  }
+  
+  /* Light theme */
+  html[data-theme="light"] .spoiler {
+    background-color: #111;
+  }
+  html[data-theme="light"] .spoiler:hover {
+    color: #fff;
+  }
+  html[data-theme="light"] .spoiler.revealed {
+    color: #fff;
+  }
+  html[data-theme="light"] .spoiler.revealed:hover {
+    color: #fff;  /* disable hover effect */
+  }
+  
+  /* Dark theme */
+  html[data-theme="dark"] .spoiler {
+    background-color: #eee;
+  }
+  html[data-theme="dark"] .spoiler:hover {
+    color: #000;
+  }
+  html[data-theme="dark"] .spoiler.revealed {
+    color: #000;
+  }
+  html[data-theme="dark"] .spoiler.revealed:hover {
+    color: #000;  /* disable hover effect */
+  }
+  

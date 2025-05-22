@@ -13,3 +13,5 @@
    chance
    SecondTest
    expection
+   practice
+   trigonometric

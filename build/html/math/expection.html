@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html :class="{'dark': darkMode === 'dark' || (darkMode === 'system' &amp;&amp; window.matchMedia('(prefers-color-scheme: dark)').matches)}" class="scroll-smooth" data-content_root="../" lang="zh-tw" x-data="{ darkMode: localStorage.getItem('darkMode') || localStorage.setItem('darkMode', 'system'), activeSection: '' }" x-init="$watch('darkMode', val =&gt; localStorage.setItem('darkMode', val))">
+<html :class="{'dark': darkMode === 'dark' || (darkMode === 'system' &amp;&amp; window.matchMedia('(prefers-color-scheme: dark)').matches)}" class="scroll-smooth" data-content_root="../" lang="zh-TW" x-data="{ darkMode: localStorage.getItem('darkMode') || localStorage.setItem('darkMode', 'system'), activeSection: '' }" x-init="$watch('darkMode', val =&gt; localStorage.setItem('darkMode', val))">
 <head>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta charset="utf-8"/>
@@ -12,10 +12,13 @@
 <meta content="數學期望值 | 上課的筆記" name="twitter:title"/>
 <link href="../_static/pygments.css?v=e72c8e07" rel="stylesheet" type="text/css"/>
 <link href="../_static/theme.css?v=42baaae4" rel="stylesheet" type="text/css"/>
+<link href="../_static/style.css?v=af261cad" rel="stylesheet" type="text/css"/>
 <link href="../_static/sphinx-design.min.css?v=95c83b7e" rel="stylesheet" type="text/css"/>
+<link href="../_static/style.css?v=af261cad" rel="stylesheet" type="text/css"/>
 <link href="../_static/awesome-sphinx-design.css?v=15e0fffa" rel="stylesheet" type="text/css"/>
 <link href="../search.html" rel="search" title="Search"/>
 <link href="../genindex.html" rel="index" title="Index"/>
+<link href="practice.html" rel="next" title="大練習"/>
 <link href="SecondTest.html" rel="prev" title="第二次段考"/>
 <script>
     <!-- Prevent Flash of wrong theme -->
@@ -78,6 +81,8 @@
 <li class="toctree-l2"><a class="reference internal" href="chance.html">古典機率</a></li>
 <li class="toctree-l2"><a class="reference internal" href="SecondTest.html">第二次段考</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">數學期望值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="practice.html">大練習</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trigonometric.html">三角函數</a></li>
 </ul>
 </li>
 </ul>
@@ -135,11 +140,71 @@
 <p>總共有2000,1500, 1100, 1000, 600, 200 元 的這些可能性</p>
 <p>然後再用機率算出來</p>
 <div class="math notranslate nohighlight">
-\[2000\times \frac{C^{2}_2}{C^{10}_{2}} + 1500\times \frac{C^2_1C^3_1}{C^{10}_2} + 1100\times \frac{C^2_1C^5_1}}{C^10_2} + 1000\times \frac{C^3_2}{C^{10}_2} + 600\times \frac{C^3_1C^5_1}{C^{10}_2} + 200\times \frac{C^5_2}{C^{10}_2} = 800\]</div>
+\[2000 \times \frac{C^2_2}{C^{10}_2} + 1500 \times \frac{C^2_1 C^3_1}{C^{10}_2} + 1100 \times \frac{C^2_1 C^5_1}{C^{10}_2} + 1000 \times \frac{C^3_2}{C^{10}_2} + 600 \times \frac{C^3_1 C^5_1}{C^{10}_2} + 200 \times \frac{C^5_2}{C^{10}_2} = 800\]</div>
 <p>然後再算數的你覺的這種題目太 <del>雞掰</del> 麻煩了，所以你想到另外一個簡單的方法</p>
 <p>今天他抽兩次 <span class="math notranslate nohighlight">\(\rightarrow\)</span> 他每個東西都乘兩倍，所以他也可以算成這樣</p>
 <div class="math notranslate nohighlight">
 \[\frac{100\times 10 + 500\times 6 + 1000\times 4}{10} = 800\]</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>對這種東西也可以用平均值來解，是不是看起來沒有這麼抽象了</p>
+</div>
+</section>
+<section id="id4">
+<h2>小練習<a class="headerlink" href="#id4" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id4'"><span>#</span></a></h2>
+<section id="id5">
+<h3>園遊會時間<a class="headerlink" href="#id5" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id5'"><span>#</span></a></h3>
+<p>今天學校要辦園遊會，聰明的你決定要向班上提出一番賞的 <del>斂財計畫</del> 商品提案，同學們也覺得非常的不錯，於是就在園遊會時販賣</p>
+<p>商品有分為</p>
+<div class="highlight-text: notranslate"><div class="highlight"><pre><span></span><code><span id="line-1">超大福袋    2包   500元等值商品
+</span><span id="line-2">大福袋     10包   100元等值商品
+</span><span id="line-3">中福袋     15包   80塊等值商品
+</span><span id="line-4">小福袋     20包   50塊等值商品
+</span><span id="line-5">這是什麼啦  30包   10元等值商品
+</span></code></pre></div>
+</div>
+<p>請問你們班成功 <del>斂財</del> 獲利的最低門檻的定價是多少</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>可以用平均價值比較好理解</p>
+</div>
+<div class="math notranslate nohighlight">
+\[500\times \frac{2}{77} + 100\times \frac{10}{77} + 80\times \frac{15}{77} + 50\times \frac{20}{77} + 10\times \frac{30}{77}\]</div>
+<p>經過精密的計算，我們會得到結果為 <span class="math notranslate nohighlight">\(58.\overline{441558}\)</span> 約為59元</p>
+</section>
+<section id="id6">
+<h3>一直吃麥當勞<a class="headerlink" href="#id6" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id6'"><span>#</span></a></h3>
+<p>題天有十個漢堡，有兩個麥香雞與八個麥香魚，請問隨便拿三個拿到麥香雞的期望值</p>
+<p>今天有三種情況，拿到兩個，一個與零個，再套到機率</p>
+<div class="math notranslate nohighlight">
+\[2\times \frac{C^2_2C^8_1}{C^{10}_{3}} + 1\times \frac{C^2_1C^8_2}{C^{10}_3} + 0\times \frac{C^8_3}{C^{10}_3}\]</div>
+<p>其中前面的 <span class="math notranslate nohighlight">\(C^2_n\)</span> 就是麥香雞的組合，經過精密的計算得出 <span class="math notranslate nohighlight">\(\frac{3}{5}\)</span> 個</p>
+<p>或是你可以這樣想</p>
+<p>今天拿到麥香雞的機率是 <span class="math notranslate nohighlight">\(\frac{1}{5}\)</span> ，那拿三次的機率就是 <span class="math notranslate nohighlight">\(\frac{3}{5}\)</span> 是不是非常的美妙</p>
+</section>
+</section>
+<section id="id7">
+<h2>賭博時間(?)<a class="headerlink" href="#id7" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id7'"><span>#</span></a></h2>
+<p>今天有一個遊戲，他要同時丟三個硬幣，如果出現一個正面拿到5元，兩個正面可以得到10元，三個正面可以得到15元，如果沒有正面的話，就要給莊家100元。
+那玩一次遊戲的期望值有多少，假設今天再改一次規則，如果沒有正面的話，要付給莊家60元，那他的所得期望值是多少。</p>
+<ol class="arabic">
+<li><p>丟三個硬幣時，他有3,2,1,0個正面的情況，可以數字化變成</p>
+<div class="math notranslate nohighlight">
+\[5\times \frac{C^3_1}{2^3} + 10\times \frac{C^3_2}{2^3} + 15\times \frac{C^3_2}{2^3} + (-100)\times \frac{1}{2^3}\]</div>
+</li>
+</ol>
+<p>經過精密的計算過後，得到期望值為-5元</p>
+<ol class="arabic" start="2">
+<li><p>如果在全無正面的時候，要付給莊家60元，那期望值為</p>
+<div class="math notranslate nohighlight">
+\[5\times \frac{C^3_1}{2^3} + 10\times \frac{C^3_2}{2^3} + 15\times \frac{C^3_2}{2^3} + (-60)\times \frac{1}{2^3}\]</div>
+</li>
+</ol>
+<p>得到期望值為0元</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>當一個遊戲的期望值為0元時，我們稱這個遊戲是**公平的**</p>
+</div>
 </section>
 </section>
 </div></div><aside class="hidden text-sm xl:block" id="right-sidebar">
@@ -147,6 +212,12 @@
 <ul>
 <li><a :data-current="activeSection === '#id2'" class="reference internal" href="#id2">期望值</a></li>
 <li><a :data-current="activeSection === '#id3'" class="reference internal" href="#id3">當期望值遇上組合</a></li>
+<li><a :data-current="activeSection === '#id4'" class="reference internal" href="#id4">小練習</a><ul>
+<li><a :data-current="activeSection === '#id5'" class="reference internal" href="#id5">園遊會時間</a></li>
+<li><a :data-current="activeSection === '#id6'" class="reference internal" href="#id6">一直吃麥當勞</a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#id7'" class="reference internal" href="#id7">賭博時間(?)</a></li>
 </ul>
 </div>
 </aside>
@@ -155,16 +226,18 @@
 </div><footer class="py-6 border-t border-border md:py-0">
 <div class="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
 <div class="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
-<p class="text-sm leading-loose text-center text-muted-foreground md:text-left">© 2025, Justmore5mins Last updated: May 15, 2025. </p>
+<p class="text-sm leading-loose text-center text-muted-foreground md:text-left">© 2025, Justmore5mins Last updated: May 20, 2025. </p>
 </div>
 </div>
 </footer>
 </div>
-<script src="../_static/documentation_options.js?v=db21b273"></script>
+<script src="../_static/documentation_options.js?v=0d9984b1"></script>
 <script src="../_static/doctools.js?v=9bcbadda"></script>
 <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
 <script defer="defer" src="../_static/theme.js?v=073f68d9"></script>
+<script src="../_static/script.js?v=ca904bab"></script>
 <script src="../_static/design-tabs.js?v=f930bc37"></script>
 <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="../_static/script.js?v=ca904bab"></script>
 </body>
 </html>

@@ -7,18 +7,18 @@
 <meta content="white" media="(prefers-color-scheme: light)" name="theme-color"/>
 <meta content="black" media="(prefers-color-scheme: dark)" name="theme-color"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>古典機率 | 上課的筆記</title>
-<meta content="古典機率 | 上課的筆記" property="og:title"/>
-<meta content="古典機率 | 上課的筆記" name="twitter:title"/>
+<title>大練習 | 上課的筆記</title>
+<meta content="大練習 | 上課的筆記" property="og:title"/>
+<meta content="大練習 | 上課的筆記" name="twitter:title"/>
 <link href="../_static/pygments.css?v=e72c8e07" rel="stylesheet" type="text/css"/>
 <link href="../_static/theme.css?v=42baaae4" rel="stylesheet" type="text/css"/>
+<link href="../_static/style.css?v=af261cad" rel="stylesheet" type="text/css"/>
 <link href="../_static/sphinx-design.min.css?v=95c83b7e" rel="stylesheet" type="text/css"/>
-<link href="../_static/style.css?v=8d23f82e" rel="stylesheet" type="text/css"/>
+<link href="../_static/style.css?v=af261cad" rel="stylesheet" type="text/css"/>
 <link href="../_static/awesome-sphinx-design.css?v=15e0fffa" rel="stylesheet" type="text/css"/>
 <link href="../search.html" rel="search" title="Search"/>
 <link href="../genindex.html" rel="index" title="Index"/>
-<link href="SecondTest.html" rel="next" title="第二次段考"/>
-<link href="combine.html" rel="prev" title="組合"/>
+<link href="expection.html" rel="prev" title="數學期望值"/>
 <script>
     <!-- Prevent Flash of wrong theme -->
       const userPreference = localStorage.getItem('darkMode');
@@ -77,10 +77,10 @@
 <li class="toctree-l2"><a class="reference internal" href="counting.html">計數原理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="permutation.html">排列</a></li>
 <li class="toctree-l2"><a class="reference internal" href="combine.html">組合</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">古典機率</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chance.html">古典機率</a></li>
 <li class="toctree-l2"><a class="reference internal" href="SecondTest.html">第二次段考</a></li>
 <li class="toctree-l2"><a class="reference internal" href="expection.html">數學期望值</a></li>
-<li class="toctree-l2"><a class="reference internal" href="practice.html">大練習</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">大練習</a></li>
 </ul>
 </li>
 </ul>
@@ -103,99 +103,13 @@
 </svg>
 </a>
 <div class="mr-1">/</div><a class="hover:text-foreground overflow-hidden text-ellipsis whitespace-nowrap" href="index.html">數學啊啊啊</a>
-<div class="mr-1">/</div><span aria-current="page" class="font-medium text-foreground overflow-hidden text-ellipsis whitespace-nowrap">古典機率</span>
+<div class="mr-1">/</div><span aria-current="page" class="font-medium text-foreground overflow-hidden text-ellipsis whitespace-nowrap">大練習</span>
 </nav>
 <div id="content" role="main">
 <section id="id1">
-<h1>古典機率<a class="headerlink" href="#id1" title="Link to this heading"><span>#</span></a></h1>
-<section id="id2">
-<h2>樣本空間與事件<a class="headerlink" href="#id2" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id2'"><span>#</span></a></h2>
-<section id="id3">
-<h3>樣本空間<a class="headerlink" href="#id3" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id3'"><span>#</span></a></h3>
-<p>樣本空間就是一個試驗的所有情況，就像是麥當勞的菜單一樣</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>一個試驗所有可能的結果的集合，就稱為這個試驗的樣本空間，樣本空間的每一個元素稱為 <strong>樣本點</strong> 或是 <strong>樣本</strong></p>
-</div>
-<p>比如說今天你要點漢堡，樣本空間就有</p>
-<div class="math notranslate nohighlight">
-\[S = \{大麥克,麥香雞,麥香魚,超大便當(?)\}\]</div>
-<p>或是用丟三次硬幣舉例，就有</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span><code><span id="line-1">(+++)(+--)(---)
-</span><span id="line-2">(++-)(-+-)
-</span><span id="line-3">(+-+)(--+)
-</span><span id="line-4">(-++)
-</span></code></pre></div>
-</div>
-<p>種情況，這就是他的樣本空間。</p>
+<h1>大練習<a class="headerlink" href="#id1" title="Link to this heading"><span>#</span></a></h1>
 </section>
-<section id="id4">
-<h3>事件<a class="headerlink" href="#id4" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id4'"><span>#</span></a></h3>
-<p>簡單來說就是樣本空間裡面的任一一個子集，就像是你去麥當勞點麥香魚+薯條+蛋捲冰淇淋就是一個事件。
-然後聰明的你就想到要不要跟集合混在一起（真是太棒了捷克）</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>假設我們把事件視為一種集合，則
-交集 <span class="math notranslate nohighlight">\(A \cap B\)</span> 就是一起發生的事件</p>
-<p>聯集 <span class="math notranslate nohighlight">\(A \cup B\)</span> 就是A或B發生的事件</p>
-<p>補集 <span class="math notranslate nohighlight">\(A^\prime\)</span> 就是A不發生的事件</p>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>如果A跟B不會同時發生( <span class="math notranslate nohighlight">\(A \cap B = \varnothing\)</span> )我們就稱他們為互斥事件，例如你不會同時點可樂又不點可樂</p>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>在計算一個機率的補集的時候長這樣 <span class="math notranslate nohighlight">\(P (A^\prime) = 1-P(A)\)</span></p>
-</div>
-</section>
-<section id="id5">
-<h3>古典機率<a class="headerlink" href="#id5" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id5'"><span>#</span></a></h3>
-<p>有個人吃飽太閒就去研究機率(是有多閒)(話說研究丟骰子跟分賭金研究出這種東西真的很頂)，定義機率為</p>
-<div class="math notranslate nohighlight">
-\[P(A) = \frac{n(A)}{n(S)}\]</div>
-<p>其中</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span><code><span id="line-1">n(S) = 樣本空間的樣本數
-</span><span id="line-2">n(A) = 事件的樣本數
-</span></code></pre></div>
-</div>
-<p>這東西是拉普拉斯提出的，又稱拉普拉斯古典機率</p>
-<hr class="docutils"/>
-<p>假設今天你要在麥當勞點餐，總共有六種漢堡，請問其中一種漢堡被選到的機率有多少？</p>
-<div class="math notranslate nohighlight">
-\[P(一種漢堡) = \frac{1(一種漢堡被選)}{6(總共六種漢堡)}\]</div>
-<p>由於樣本空間就是集合的一種，所以我們一樣可以用操作集合的方式來操作機率</p>
-<div class="math notranslate nohighlight">
-\[P(A \cup B) = P(A) + P(B) - P(A \cap B)\]</div>
-<div class="math notranslate nohighlight">
-\[P(A \cup B \cup C) = [P(A) + P(B) + P(C)] - [P(A \cap B) + P(B \cap C) + P(A \cap C)] + [P(A \cap B \cap C)]\]</div>
-</section>
-</section>
-<section id="id6">
-<h2>小練習<a class="headerlink" href="#id6" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id6'"><span>#</span></a></h2>
-<p>今天有一個神秘箱子，裡面有6顆紅球跟n個白球，一次拿兩顆的為一紅一白的機率是 <span class="math notranslate nohighlight">\(\frac{8}{15}\)</span> ，請問白球有多少顆</p>
-<p>總共符合條件的情況有6n種 ( <span class="math notranslate nohighlight">\(C^6_1C^n_1\)</span> )，他的組合數有 <span class="math notranslate nohighlight">\(C^{6+n}_2\)</span> 種，我們也可以得到這個機率式</p>
-<div class="math notranslate nohighlight">
-\[\frac{6n}{\frac{(n+6)(n+5)}{2}} = \frac{12n}{(n+6)(n+5)} = \frac{8}{15}\]</div>
-<p>在一波操作猛如虎過後我們得出</p>
-<div class="math notranslate nohighlight">
-\[x = \frac{15}{2} or 4\]</div>
-<p>很明顯沒有7.5顆球這種鬼東西，所以白球有四顆</p>
-</section>
-</section>
-</div></div><aside class="hidden text-sm xl:block" id="right-sidebar">
-<div class="sticky top-16 -mt-10 max-h-[calc(100vh-5rem)] overflow-y-auto pt-6 space-y-2"><p class="font-medium">On this page</p>
-<ul>
-<li><a :data-current="activeSection === '#id2'" class="reference internal" href="#id2">樣本空間與事件</a><ul>
-<li><a :data-current="activeSection === '#id3'" class="reference internal" href="#id3">樣本空間</a></li>
-<li><a :data-current="activeSection === '#id4'" class="reference internal" href="#id4">事件</a></li>
-<li><a :data-current="activeSection === '#id5'" class="reference internal" href="#id5">古典機率</a></li>
-</ul>
-</li>
-<li><a :data-current="activeSection === '#id6'" class="reference internal" href="#id6">小練習</a></li>
-</ul>
-</div>
-</aside>
+</div></div>
 </main>
 </div>
 </div><footer class="py-6 border-t border-border md:py-0">
@@ -210,8 +124,8 @@
 <script src="../_static/doctools.js?v=9bcbadda"></script>
 <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
 <script defer="defer" src="../_static/theme.js?v=073f68d9"></script>
+<script src="../_static/script.js?v=ca904bab"></script>
 <script src="../_static/design-tabs.js?v=f930bc37"></script>
-<script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script src="../_static/script.js?v=ca904bab"></script>
 </body>
 </html>
