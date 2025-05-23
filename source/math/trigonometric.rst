@@ -59,11 +59,48 @@
     :align: center
 
 .. note::
+    公式們
+
     .. math::
         \tan\theta = \frac{\sin\theta}{\cos\theta} \\
-        \sin^2 \theta+\cos^2\theta = 1
+        \sin^2 \theta+\cos^2\theta = 1 \\
+        \sin \theta = \cos(90^\circ-\theta)\\
+        \cos \theta = \sin(90^\circ-\theta)
 
-.. todo:: Add the 30º and 60º table of sin cos and tan
+.. todo:: Add the 30^\circ and 60^\circ table of sin cos and tan
+
+
+當立方和公式遇到三角函數
+-------------------------
+
+小時候，我們學到
+
+.. math::
+    a^3+b^3 = (a+b)(a^3-ab+b^3) = (a+b)^3 - 3ab(a+b)\\
+    a^3-b^3 = (a-b)(a^3+ab+b^3) = (a-b)^3 + 3ab(a-b)
+
+讓我們來看看有哪些題目可以使用到這些公式
+
+.. math::
+    known \sin \theta - \cos\theta = \frac{1}{2}\\
+    1. \sin\theta\cos\theta\\
+    2. \sin\theta+\cos\theta\\
+    3. \sin^3 \theta - \cos^3 \theta\\
+   
+1. 先一波計算
+   
+   :math:`(\sin \theta - \cos \theta)^2 = \sin^2 \theta + 2\sin\theta\cos\theta + \cos^2 \theta = \frac{1}{4}`
+   
+   再因為 :math:`\sin^2 \theta + \cos^2 \theta = 1` ,所以 :math:`\sin\theta\cos\theta=\frac{1}{4}\times\frac{1}{2} = \frac{1}{8}`
+
+2. :math:`(\sin\theta+\cos\theta)^2 = ... = 1+2\times \frac{3}{8}, 所以 \sin\theta+\cos\theta = \frac{\sqrt{7}}{8}`
+
+3. :math:`\sin^3 \theta - \cos^3 \theta = ... = \frac{1}{2} \times (1+\frac{3}{8}) = \frac{11}{16}`
+
+.. tip::
+    仰角上看俯角往下看
+
+
 
 小練習
 ---------
@@ -83,5 +120,15 @@
 
 非常的完美
 
+
 公式換換樂
 +++++++++++++++
+
+.. math::
+    1. \cos^2 34^\circ + \cos^2 56^\circ \\
+    2. \tan^2 65^\circ-\frac{1}{\cos^2 65ª}
+
+.. math::
+    1. =\sin^2 56^\circ + \cos^2 56^\circ = 1 \\
+    2. =\frac{\sin^2 65^\circ}{\cos^2 65^\circ} - \frac{1}{\cos^2 65^\circ} = \frac{\sin^2 65^\circ - (\cos^2 65^\circ+\sin^2 65^\circ)}{\cos^2 65^\circ} = -1
+   

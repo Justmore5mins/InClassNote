@@ -153,27 +153,62 @@
 </a>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
+<p>公式們</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\tan\theta = \frac{\sin\theta}{\cos\theta} \\
-\sin^2 \theta+\cos^2\theta = 1\end{split}\]</div>
+\sin^2 \theta+\cos^2\theta = 1 \\
+\sin \theta = \cos(90^\circ-\theta)\\
+\cos \theta = \sin(90^\circ-\theta)\end{split}\]</div>
 </div>
 <section id="id2">
-<h2>小練習<a class="headerlink" href="#id2" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id2'"><span>#</span></a></h2>
+<h2>當立方和公式遇到三角函數<a class="headerlink" href="#id2" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id2'"><span>#</span></a></h2>
+<p>小時候，我們學到</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}a^3+b^3 = (a+b)(a^3-ab+b^3) = (a+b)^3 - 3ab(a+b)\\
+a^3-b^3 = (a-b)(a^3+ab+b^3) = (a-b)^3 + 3ab(a-b)\end{split}\]</div>
+<p>讓我們來看看有哪些題目可以使用到這些公式</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}known \sin \theta - \cos\theta = \frac{1}{2}\\
+1. \sin\theta\cos\theta\\
+2. \sin\theta+\cos\theta\\
+3. \sin^3 \theta - \cos^3 \theta\\\end{split}\]</div>
+<ol class="arabic">
+<li><p>先一波計算</p>
+<p><span class="math notranslate nohighlight">\((\sin \theta - \cos \theta)^2 = \sin^2 \theta + 2\sin\theta\cos\theta + \cos^2 \theta = \frac{1}{4}\)</span></p>
+<p>再因為 <span class="math notranslate nohighlight">\(\sin^2 \theta + \cos^2 \theta = 1\)</span> ,所以 <span class="math notranslate nohighlight">\(\sin\theta\cos\theta=\frac{1}{4}\times\frac{1}{2} = \frac{1}{8}\)</span></p>
+</li>
+<li><p><span class="math notranslate nohighlight">\((\sin\theta+\cos\theta)^2 = ... = 1+2\times \frac{3}{8}, 所以 \sin\theta+\cos\theta = \frac{\sqrt{7}}{8}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\sin^3 \theta - \cos^3 \theta = ... = \frac{1}{2} \times (1+\frac{3}{8}) = \frac{11}{16}\)</span></p></li>
+</ol>
+</section>
 <section id="id3">
-<h3>試求下面圖剩餘線段的長度<a class="headerlink" href="#id3" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id3'"><span>#</span></a></h3>
+<h2>小練習<a class="headerlink" href="#id3" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id3'"><span>#</span></a></h2>
+<section id="id4">
+<h3>試求下面圖剩餘線段的長度<a class="headerlink" href="#id4" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id4'"><span>#</span></a></h3>
 <a class="reference internal image-reference" href="../_images/q1.png"><img alt="../_images/q1.png" class="align-center" src="../_images/q1.png" style="width: 60%;"/>
 </a>
 <p>其中 <span class="math notranslate nohighlight">\(\sin \theta = \frac{15}{17}, \cos \phi = \frac{3}{5}\)</span></p>
 <p>根據上面的條件，我們可以知道 <span class="math notranslate nohighlight">\(\overline{BD} = 15, \overline{BC} = 15\times\frac{3}{5}=9\)</span> ，再推斷出 <span class="math notranslate nohighlight">\(\overline{DC} = 4\times3=12\)</span></p>
 <p>非常的完美</p>
 </section>
+<section id="id5">
+<h3>公式換換樂<a class="headerlink" href="#id5" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id5'"><span>#</span></a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}1. \cos^2 34^\circ + \cos^2 56^\circ \\
+2. \tan^2 65^\circ-\frac{1}{\cos^2 65ª}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}1. =\sin^2 56^\circ + \cos^2 56^\circ = 1 \\
+2. =\frac{\sin^2 65^\circ}{\cos^2 65^\circ} - \frac{1}{\cos^2 65^\circ} = \frac{\sin^2 65^\circ - (\cos^2 65^\circ+\sin^2 65^\circ)}{\cos^2 65^\circ} = -1\end{split}\]</div>
+</section>
 </section>
 </section>
 </div></div><aside class="hidden text-sm xl:block" id="right-sidebar">
 <div class="sticky top-16 -mt-10 max-h-[calc(100vh-5rem)] overflow-y-auto pt-6 space-y-2"><p class="font-medium">On this page</p>
 <ul>
-<li><a :data-current="activeSection === '#id2'" class="reference internal" href="#id2">小練習</a><ul>
-<li><a :data-current="activeSection === '#id3'" class="reference internal" href="#id3">試求下面圖剩餘線段的長度</a></li>
+<li><a :data-current="activeSection === '#id2'" class="reference internal" href="#id2">當立方和公式遇到三角函數</a></li>
+<li><a :data-current="activeSection === '#id3'" class="reference internal" href="#id3">小練習</a><ul>
+<li><a :data-current="activeSection === '#id4'" class="reference internal" href="#id4">試求下面圖剩餘線段的長度</a></li>
+<li><a :data-current="activeSection === '#id5'" class="reference internal" href="#id5">公式換換樂</a></li>
 </ul>
 </li>
 </ul>
@@ -184,7 +219,7 @@
 </div><footer class="py-6 border-t border-border md:py-0">
 <div class="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
 <div class="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
-<p class="text-sm leading-loose text-center text-muted-foreground md:text-left">© 2025, Justmore5mins Last updated: May 22, 2025. </p>
+<p class="text-sm leading-loose text-center text-muted-foreground md:text-left">© 2025, Justmore5mins Last updated: May 23, 2025. </p>
 </div>
 </div>
 </footer>
