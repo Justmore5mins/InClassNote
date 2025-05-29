@@ -1,18 +1,41 @@
 三角函數
 ===========
 
-今天你看到一個直角三角形
+角
+-----
 
-.. image:: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROD3cUx-x6ssICsUviPAvCQ5kPrcsO6AGOFg&s
+今天你看到一個角長這樣
+
+.. image:: /_static/math/traingles/angles.png
     :width: 60%
-    :height: 400px
     :align: center
 
-今天我們定義
+一個角有兩個邊， ``始邊`` 與 ``終邊`` ，分別是一個角開始的邊與結束的邊
 
-| 正弦 :math:`\sin \theta = \frac{a}{h}`
-| 餘弦 :math:`\cos \theta = \frac{b}{h}`
-| 正切 :math:`\tan \theta = \frac{a}{b}` 
+.. note::
+    假設有兩個角他是同界角(共用始邊與終邊) :math:`\Longleftrightarrow \theta_1 - \theta_2 = 360^\circ k, k \in \mathbb{Z}`
+
+.. tip::
+    標準位置角：始邊是X軸正向，若終邊再第一象限 :math:`\rightarrow` 第一象限角, 第二象限 :math:`\rightarrow` 第二象限角 以此類推
+
+.. image:: /_static/math/traingles/axis.png
+    :width: 60%
+    :align: center
+
+那我們可以知道
+
+.. math::
+    \sin \theta = \frac{y}{r} (上下)
+    \cos \theta = \frac{x}{r} (左右)
+    \tan \theta = \frac{y}{x}
+
+其中 :math:`\tan \theta = \frac{\sin\theta}{\cos\theta}`
+
+如果背起來的話可以這樣記
+
+.. image:: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNDHPL25vPAGPMGGx858oPlszdPPH6EwByMQ&s
+    :width: 60%
+    :align: center
 
 .. note::
     我們也可以記成
@@ -20,6 +43,27 @@
     | 正弦 :math:`\sin \theta = \frac{對邊}{斜邊}`
     | 餘弦 :math:`\cos \theta = \frac{鄰邊}{對邊}`
     | 正切 :math:`\tan \theta = \frac{對邊}{鄰邊}` 
+
+有趣的函數圖形
+---------------
+
+:math:`\sin \theta` 跟 :math:`\cos\theta` 的函數圖形長這樣
+
+.. image:: /_static/math/traingles/functions.png
+    :width: 60%
+    :align: center
+
+眼尖的你發現這個函數在每一個 :math:`2\pi` 會重複一次(這個牽涉到弧度的概念，可以簡單理解為 :math:`2\pi = 360^\circ` )
+
+還有 :math:`\sin` 跟 :math:`\cos` 只有差 :math:`1.5\pi` (270度)
+
+.. image:: /_static/math/traingles/tanx.png
+    :width: 60%
+    :align: center
+
+這個是tan的函數圖形，可以看到他非常的抽象，就是在一些特定點一直發散真的是很煩
+
+----
 
 假設今天a=5 b=12, c=13，那 :math:`\angle A` 的三角函數式多少
 

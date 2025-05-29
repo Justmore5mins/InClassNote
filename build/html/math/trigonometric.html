@@ -109,15 +109,31 @@
 <div id="content" role="main">
 <section id="id1">
 <h1>三角函數<a class="headerlink" href="#id1" title="Link to this heading"><span>#</span></a></h1>
-<p>今天你看到一個直角三角形</p>
-<a class="reference internal image-reference" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROD3cUx-x6ssICsUviPAvCQ5kPrcsO6AGOFg&amp;s"><img alt="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROD3cUx-x6ssICsUviPAvCQ5kPrcsO6AGOFg&amp;s" class="align-center" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROD3cUx-x6ssICsUviPAvCQ5kPrcsO6AGOFg&amp;s" style="width: 60%; height: 400px;"/>
+<section id="id2">
+<h2>角<a class="headerlink" href="#id2" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id2'"><span>#</span></a></h2>
+<p>今天你看到一個角長這樣</p>
+<a class="reference internal image-reference" href="../_images/angles.png"><img alt="../_images/angles.png" class="align-center" src="../_images/angles.png" style="width: 60%;"/>
 </a>
-<p>今天我們定義</p>
-<div class="line-block">
-<div class="line">正弦 <span class="math notranslate nohighlight">\(\sin \theta = \frac{a}{h}\)</span></div>
-<div class="line">餘弦 <span class="math notranslate nohighlight">\(\cos \theta = \frac{b}{h}\)</span></div>
-<div class="line">正切 <span class="math notranslate nohighlight">\(\tan \theta = \frac{a}{b}\)</span></div>
+<p>一個角有兩個邊， <code class="docutils literal notranslate"><span class="pre">始邊</span></code> 與 <code class="docutils literal notranslate"><span class="pre">終邊</span></code> ，分別是一個角開始的邊與結束的邊</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>假設有兩個角他是同界角(共用始邊與終邊) <span class="math notranslate nohighlight">\(\Longleftrightarrow \theta_1 - \theta_2 = 360^\circ k, k \in \mathbb{Z}\)</span></p>
 </div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>標準位置角：始邊是X軸正向，若終邊再第一象限 <span class="math notranslate nohighlight">\(\rightarrow\)</span> 第一象限角, 第二象限 <span class="math notranslate nohighlight">\(\rightarrow\)</span> 第二象限角 以此類推</p>
+</div>
+<a class="reference internal image-reference" href="../_images/axis.png"><img alt="../_images/axis.png" class="align-center" src="../_images/axis.png" style="width: 60%;"/>
+</a>
+<p>那我們可以知道</p>
+<div class="math notranslate nohighlight">
+\[\sin \theta = \frac{y}{r} (上下)
+\cos \theta = \frac{x}{r} (左右)
+\tan \theta = \frac{y}{x}\]</div>
+<p>其中 <span class="math notranslate nohighlight">\(\tan \theta = \frac{\sin\theta}{\cos\theta}\)</span></p>
+<p>如果背起來的話可以這樣記</p>
+<a class="reference internal image-reference" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNDHPL25vPAGPMGGx858oPlszdPPH6EwByMQ&amp;s"><img alt="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNDHPL25vPAGPMGGx858oPlszdPPH6EwByMQ&amp;s" class="align-center" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNDHPL25vPAGPMGGx858oPlszdPPH6EwByMQ&amp;s" style="width: 60%;"/>
+</a>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>我們也可以記成</p>
@@ -127,6 +143,18 @@
 <div class="line">正切 <span class="math notranslate nohighlight">\(\tan \theta = \frac{對邊}{鄰邊}\)</span></div>
 </div>
 </div>
+</section>
+<section id="id3">
+<h2>有趣的函數圖形<a class="headerlink" href="#id3" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id3'"><span>#</span></a></h2>
+<p><span class="math notranslate nohighlight">\(\sin \theta\)</span> 跟 <span class="math notranslate nohighlight">\(\cos\theta\)</span> 的函數圖形長這樣</p>
+<a class="reference internal image-reference" href="../_images/functions.png"><img alt="../_images/functions.png" class="align-center" src="../_images/functions.png" style="width: 60%;"/>
+</a>
+<p>眼尖的你發現這個函數在每一個 <span class="math notranslate nohighlight">\(2\pi\)</span> 會重複一次(這個牽涉到弧度的概念，可以簡單理解為 <span class="math notranslate nohighlight">\(2\pi = 360^\circ\)</span> )</p>
+<p>還有 <span class="math notranslate nohighlight">\(\sin\)</span> 跟 <span class="math notranslate nohighlight">\(\cos\)</span> 只有差 <span class="math notranslate nohighlight">\(1.5\pi\)</span> (270度)</p>
+<a class="reference internal image-reference" href="../_images/tanx.png"><img alt="../_images/tanx.png" class="align-center" src="../_images/tanx.png" style="width: 60%;"/>
+</a>
+<p>這個是tan的函數圖形，可以看到他非常的抽象，就是在一些特定點一直發散真的是很煩</p>
+<hr class="docutils"/>
 <p>假設今天a=5 b=12, c=13，那 <span class="math notranslate nohighlight">\(\angle A\)</span> 的三角函數式多少</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\sin A = \frac{5}{13}\\
@@ -160,8 +188,9 @@
 \sin \theta = \cos(90^\circ-\theta)\\
 \cos \theta = \sin(90^\circ-\theta)\end{split}\]</div>
 </div>
-<section id="id2">
-<h2>當立方和公式遇到三角函數<a class="headerlink" href="#id2" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id2'"><span>#</span></a></h2>
+</section>
+<section id="id4">
+<h2>當立方和公式遇到三角函數<a class="headerlink" href="#id4" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id4'"><span>#</span></a></h2>
 <p>小時候，我們學到</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}a^3+b^3 = (a+b)(a^3-ab+b^3) = (a+b)^3 - 3ab(a+b)\\
@@ -180,19 +209,23 @@ a^3-b^3 = (a-b)(a^3+ab+b^3) = (a-b)^3 + 3ab(a-b)\end{split}\]</div>
 <li><p><span class="math notranslate nohighlight">\((\sin\theta+\cos\theta)^2 = ... = 1+2\times \frac{3}{8}, 所以 \sin\theta+\cos\theta = \frac{\sqrt{7}}{8}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\sin^3 \theta - \cos^3 \theta = ... = \frac{1}{2} \times (1+\frac{3}{8}) = \frac{11}{16}\)</span></p></li>
 </ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>仰角上看俯角往下看</p>
+</div>
 </section>
-<section id="id3">
-<h2>小練習<a class="headerlink" href="#id3" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id3'"><span>#</span></a></h2>
-<section id="id4">
-<h3>試求下面圖剩餘線段的長度<a class="headerlink" href="#id4" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id4'"><span>#</span></a></h3>
+<section id="id5">
+<h2>小練習<a class="headerlink" href="#id5" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id5'"><span>#</span></a></h2>
+<section id="id6">
+<h3>試求下面圖剩餘線段的長度<a class="headerlink" href="#id6" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id6'"><span>#</span></a></h3>
 <a class="reference internal image-reference" href="../_images/q1.png"><img alt="../_images/q1.png" class="align-center" src="../_images/q1.png" style="width: 60%;"/>
 </a>
 <p>其中 <span class="math notranslate nohighlight">\(\sin \theta = \frac{15}{17}, \cos \phi = \frac{3}{5}\)</span></p>
 <p>根據上面的條件，我們可以知道 <span class="math notranslate nohighlight">\(\overline{BD} = 15, \overline{BC} = 15\times\frac{3}{5}=9\)</span> ，再推斷出 <span class="math notranslate nohighlight">\(\overline{DC} = 4\times3=12\)</span></p>
 <p>非常的完美</p>
 </section>
-<section id="id5">
-<h3>公式換換樂<a class="headerlink" href="#id5" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id5'"><span>#</span></a></h3>
+<section id="id7">
+<h3>公式換換樂<a class="headerlink" href="#id7" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id7'"><span>#</span></a></h3>
 <div class="math notranslate nohighlight">
 \[\begin{split}1. \cos^2 34^\circ + \cos^2 56^\circ \\
 2. \tan^2 65^\circ-\frac{1}{\cos^2 65ª}\end{split}\]</div>
@@ -205,10 +238,12 @@ a^3-b^3 = (a-b)(a^3+ab+b^3) = (a-b)^3 + 3ab(a-b)\end{split}\]</div>
 </div></div><aside class="hidden text-sm xl:block" id="right-sidebar">
 <div class="sticky top-16 -mt-10 max-h-[calc(100vh-5rem)] overflow-y-auto pt-6 space-y-2"><p class="font-medium">On this page</p>
 <ul>
-<li><a :data-current="activeSection === '#id2'" class="reference internal" href="#id2">當立方和公式遇到三角函數</a></li>
-<li><a :data-current="activeSection === '#id3'" class="reference internal" href="#id3">小練習</a><ul>
-<li><a :data-current="activeSection === '#id4'" class="reference internal" href="#id4">試求下面圖剩餘線段的長度</a></li>
-<li><a :data-current="activeSection === '#id5'" class="reference internal" href="#id5">公式換換樂</a></li>
+<li><a :data-current="activeSection === '#id2'" class="reference internal" href="#id2">角</a></li>
+<li><a :data-current="activeSection === '#id3'" class="reference internal" href="#id3">有趣的函數圖形</a></li>
+<li><a :data-current="activeSection === '#id4'" class="reference internal" href="#id4">當立方和公式遇到三角函數</a></li>
+<li><a :data-current="activeSection === '#id5'" class="reference internal" href="#id5">小練習</a><ul>
+<li><a :data-current="activeSection === '#id6'" class="reference internal" href="#id6">試求下面圖剩餘線段的長度</a></li>
+<li><a :data-current="activeSection === '#id7'" class="reference internal" href="#id7">公式換換樂</a></li>
 </ul>
 </li>
 </ul>
@@ -219,7 +254,7 @@ a^3-b^3 = (a-b)(a^3+ab+b^3) = (a-b)^3 + 3ab(a-b)\end{split}\]</div>
 </div><footer class="py-6 border-t border-border md:py-0">
 <div class="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
 <div class="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
-<p class="text-sm leading-loose text-center text-muted-foreground md:text-left">© 2025, Justmore5mins Last updated: May 23, 2025. </p>
+<p class="text-sm leading-loose text-center text-muted-foreground md:text-left">© 2025, Justmore5mins Last updated: May 29, 2025. </p>
 </div>
 </div>
 </footer>
