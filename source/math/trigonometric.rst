@@ -57,11 +57,22 @@
 
 還有 :math:`\sin` 跟 :math:`\cos` 只有差 :math:`1.5\pi` (270度)
 
+
 .. image:: /_static/math/traingles/tanx.png
     :width: 60%
     :align: center
 
-這個是tan的函數圖形，可以看到他非常的抽象，就是在一些特定點一直發散真的是很煩
+這個是tan的函數圖形，可以看到他非常的抽象，就是在 :math:`90^\circ` 跟 :math:`270^\circ` 會發散掉
+
+三角函數的範圍
++++++++++++++
+
+.. image:: /_static/math/triangles/positive.png
+    :width: 60%
+    :align: center
+
+.. attention:: 
+    :math:`\tan 90^\circ` 跟 :math:`\tan 270^\circ` 未定義
 
 ----
 
