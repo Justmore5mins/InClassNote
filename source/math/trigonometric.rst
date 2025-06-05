@@ -67,7 +67,7 @@
 三角函數的範圍
 +++++++++++++
 
-.. image:: /_static/math/triangles/positive.png
+.. image:: /_static/math/traingles/positive.png
     :width: 60%
     :align: center
 
@@ -123,6 +123,42 @@
         \cos \theta = \sin(90^\circ-\theta)
 
 .. todo:: Add the 30^\circ and 60^\circ table of sin cos and tan
+
+小提醒
+----------
+
+定義 :math:`\theta \in III` ，那我們能不能說 :math:`\frac{\theta}{2} \in II` ?
+或者是說 :math:`\sin \theta > 0` ，則 :math:`\sin\frac{\theta}{2} > 0` ?
+
+這兩個敘述在表面上看起來很合理，但如果今天 :math:`\theta` 在 :math:`-120` 的話他除二就會變成 :math:`-60` 變成在第四象限，就不符合敘述，同理可證第二個敘述
+
+.. attention::
+    .. math::
+        if\ \theta \in III \not \Rightarrow \frac{\theta}{2} \in II
+
+角度的轉換
+--------------
+
+:math:`180^\circ \pm \theta`
++++++++++++++++++++++++++++++++
+
+| :math:`\sin(180^\circ - \theta) = \sin \theta`
+| :math:`\cos(180^\circ - \theta) = -\cos \theta`
+| 因為cos跟sin異號 :math:`\Rightarrow \tan(180^\circ - \theta) = - \tan \theta`
+
+| :math:`\sin(180^\circ + \theta) = -\sin \theta`
+| :math:`\cos(180^\circ + \theta) = -\cos \theta`
+| 因為cos跟sin同號 :math:`\Rightarrow \tan(180^\circ - \theta) = \tan \theta`
+
+.. tip::
+    口訣：奇變偶不變，正負看象限(舉例 :math:`\sin(x^\circ + \theta)` )
+
+    我們要先算x是幾個90度，如果是奇數，那就變函數(sin > cos, cos > sin)
+
+    再看正負（也就是括號裡面那一坨）對應 :ref:`函數的正負值 <三角函數的範圍>` ，該加負號就加負號
+
+.. attention:: 
+    這個口訣對tan不適用
 
 
 當立方和公式遇到三角函數
